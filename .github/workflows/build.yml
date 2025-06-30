@@ -426,7 +426,7 @@ jobs:
           path: "out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}.img"
 
   publish:
-    needs: [Build-Kernel]
+    needs: [Set-repos, Build-Kernel]
     runs-on: ubuntu-latest
     if: ${{ always() && github.event.inputs.release_mode == 'true' }}
     env:
@@ -443,12 +443,12 @@ jobs:
         with:
           files: downloaded_kernels/**
           tag_name: ${{ env.builddate }}-${{ github.event.inputs.config_mode }}
-          name: Automation build for ${{ github.event.inputs.config_mode }} tag ${{ env.builddate }} from run ${{ github.run_number }}
+          name: Automation build for ${{ github.event.inputs.config_mode }} from run ${{ github.run_number }}
           prerelease: false
           draft: false
           generate_release_notes: false
           body: |
-            Open kernel build from RainyLand.
+            Open kernel build from RainyLand. Build tag `${{ env.builddate }}-${{ github.event.inputs.config_mode }}`
             # Installation
             1. Flash the kernel from this release.
             2. Download and install the root manager APK from here (depends on your kernel):
