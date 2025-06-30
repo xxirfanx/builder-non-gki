@@ -96,7 +96,7 @@ jobs:
           fi
       - name: "Set builddate"
         id: generate-builddate
-        run: echo "builddate=$(date '+%Y%m%d-%H%M')" >> $GITHUB_OUTPUT
+        run: echo "builddate=$(date '+%Y%m%d.%H%M')" >> $GITHUB_OUTPUT
 
   Build-Kernel:
     name: "Build kernel"
@@ -408,6 +408,8 @@ jobs:
     needs: [Build-Kernel]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.release_mode == 'true' }}
+    env:
+      builddate: "${{ needs.Set-repos.outputs.builddate }}"
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
@@ -419,11 +421,19 @@ jobs:
         uses: softprops/action-gh-release@v2.1.0
         with:
           files: downloaded_kernels/**
-          tag_name: v${{ env.builddate }}.${{ github.run_number }}
-          name: v${{ env.builddate }}.${{ github.run_number }}
+          tag_name: ${{ env.builddate }}.${{ github.run_number }}-${{ github.event.inputs.config_mode }}
+          name: Automation build for ${{ github.event.inputs.config_mode }} tag ${{ env.builddate }}.${{ github.run_number }}
           prerelease: false
           draft: false
           generate_release_notes: false
-          body: "Open kernel build from RainyLand, patched with [KernelSU-Next](https://github.com/KernelSU-Next/KernelSU-Next) + [SuSFS patches](https://gitlab.com/simonpunk/susfs4ksu).\n\n**Installation:**\n1. Flash the kernel from this release.\n2. Download and install the KernelSU-Next manager APK from here:\n> [Stable Version](https://github.com/KernelSU-Next/KernelSU-Next/releases) || [Nightly Version](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager/next/manager)\n\n3. Download and install the SuSFS Module from here: https://github.com/sidex15/susfs4ksu-module/releases/latest"
+          body: |
+            Open kernel build from RainyLand.
+            # Installation
+            1. Flash the kernel from this release.
+            2. Download and install the root manager APK from here (depends on your kernel):
+            - **KernelSU-Next:** [Stable Version](https://github.com/KernelSU-Next/KernelSU-Next/releases) / [Nightly Version](https://nightly.link/KernelSU-Next/KernelSU-Next/workflows/build-manager/next/manager)
+            - **APatch:** [Stable Version](https://github.com/bmax121/APatch/releases/latest) / [Nightly Version](https://nightly.link/bmax121/APatch/workflows/build/main/APatch)
+            - **SukiSU-Ultra:** [Stable Version](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases) / [Nightly Version](https://nightly.link/SukiSU-Ultra/SukiSU-Ultra/workflows/build-manager/main/manager)
+            4. Download and install the SuSFS Module from here: https://github.com/sidex15/susfs4ksu-module/releases/latest
           fail_on_unmatched_files: true
           preserve_order: true
