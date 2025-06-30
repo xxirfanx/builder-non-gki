@@ -101,9 +101,11 @@ jobs:
   Build-Kernel:
     name: "Build kernel"
     runs-on: ubuntu-24.04
+    continue-on-error: true
     needs:
       - Set-repos
     strategy:
+      max-parallel: 15
       fail-fast: false
       matrix:
         repos: ${{ fromJSON(needs.Set-repos.outputs.repos) }}
@@ -407,7 +409,7 @@ jobs:
   publish:
     needs: [Build-Kernel]
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.release_mode == 'true' }}
+    if: ${{ always() && github.event.inputs.release_mode == 'true' }}
     env:
       builddate: "${{ needs.Set-repos.outputs.builddate }}"
     steps:
