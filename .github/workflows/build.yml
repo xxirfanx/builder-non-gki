@@ -96,7 +96,7 @@ jobs:
           fi
       - name: "Set builddate"
         id: generate-builddate
-        run: echo "builddate=$(date '+%Y%m%d-%H%M')" >> $GITHUB_OUTPUT
+        run: echo "builddate=$(date '+%Y%m%d')" >> $GITHUB_OUTPUT
 
   Build-Kernel:
     name: "Build kernel"
@@ -173,9 +173,9 @@ jobs:
           path: |
             ~/.ccache
             ${{ env.OUT_DIR }}
-          key: ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}
+          key: ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}-${{ github.run_number }}
           restore-keys: |
-            ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}
+            ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}-${{ env.builddate }}-${{ github.run_number }}
       - name: "Setup Anykernel3"
         if: ${{ env.useAnykernel == 'true' }}
         env:
@@ -397,13 +397,13 @@ jobs:
             cat Image.gz dtb > Image.gz-dtb
             rm -rf Image Image.gz dtb
           fi
-          zip -q -r "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}" *
+          zip -q -r "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}" *
       - name: "Upload AnyKernel3 image"
         uses: actions/upload-artifact@v4
         if: ${{ env.useAnykernel == 'true' }}
         with:
-          name: "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}"
-          path: ./AnyKernel3/anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}.zip
+          name: "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}"
+          path: ./AnyKernel3/anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.zip
       - name: "Pack kernel image"
         if: ${{ env.useImage == 'true' }}
         run: | 
@@ -417,13 +417,13 @@ jobs:
           mv ../out_kernel/Image ./kernel
           ../magiskboot_x86 repack ${{ env.ogImageName }}
           cd ..
-          cp -f ./wrap_kernel/new-boot.img ./out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}.img
+          cp -f ./wrap_kernel/new-boot.img ./out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img
       - name: "Upload image"
         if: ${{ env.useImage == 'true' }}
         uses: actions/upload-artifact@v4
         with:
-          name: "image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}"
-          path: "out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}.img"
+          name: "image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}"
+          path: "out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img"
 
   publish:
     needs: [Set-repos, Build-Kernel]
@@ -442,13 +442,13 @@ jobs:
         uses: softprops/action-gh-release@v2.1.0
         with:
           files: downloaded_kernels/**
-          tag_name: ${{ env.builddate }}-${{ github.event.inputs.config_mode }}
+          tag_name: ${{ env.builddate }}.${{ github.run_number }}-${{ github.event.inputs.config_mode }}
           name: Automation build for ${{ github.event.inputs.config_mode }} from run ${{ github.run_number }}
           prerelease: false
           draft: false
           generate_release_notes: false
           body: |
-            Open kernel build from RainyLand. Build tag `${{ env.builddate }}-${{ github.event.inputs.config_mode }}`
+            Open kernel build from RainyLand. Version `${{ env.builddate }}.${{ github.run_number }}-${{ github.event.inputs.config_mode }}`
             # Installation
             1. Flash the kernel from this release.
             2. Download and install the root manager APK from here (depends on your kernel):
