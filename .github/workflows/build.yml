@@ -105,7 +105,7 @@ jobs:
     needs:
       - Set-repos
     strategy:
-      max-parallel: 15
+      max-parallel: 10
       fail-fast: false
       matrix:
         repos: ${{ fromJSON(needs.Set-repos.outputs.repos) }}
@@ -195,44 +195,63 @@ jobs:
           toolchains: "${{ toJSON(matrix.repos.toolchains) }}"
         run: |
           toolchains_num="$(echo $toolchains | jq 'length')"
-          echo "There is $toolchains_num defined toolchains."
+          echo "There are $toolchains_num defined toolchains."
           for ((i=0;i<toolchains_num;i++)); do
             toolchain_name=$(echo $toolchains | jq -r ".[$i].name")
-            # Github
             toolchain_repo=$(echo $toolchains | jq -r ".[$i].repo")
             toolchain_branch=$(echo $toolchains | jq -r ".[$i].branch")
-            # From archive
             toolchain_url=$(echo $toolchains | jq -r ".[$i].url")
-            echo $toolchain_url
-            if [ -z "${toolchain_url:-}" ] || [ "$toolchain_url" = "null" ];  then
-              git clone --recursive --depth=1 -j $(nproc) --branch $toolchain_branch $toolchain_repo $toolchain_name
-              echo "Clone $toolchain_name => ($toolchain_repo)"
+
+            echo "Processing toolchain: $toolchain_name"
+
+            if [ -z "${toolchain_url:-}" ] || [ "$toolchain_url" = "null" ]; then
+              echo "Cloning $toolchain_repo (branch: $toolchain_branch)"
+              for attempt in {1..3}; do
+                git clone --recursive --depth=1 -j $(nproc) --branch "$toolchain_branch" "$toolchain_repo" "$toolchain_name" && break
+                echo "Retrying git clone ($attempt/3)..."
+                sleep 5
+                if [ "$attempt" -eq 3 ]; then
+                  echo "git clone failed after 3 attempts."
+                  exit 1
+                fi
+              done
             else
-              wget "$toolchain_url"
+              echo "Downloading $toolchain_url"
               filename="${toolchain_url##*/}"
-              mkdir -p $toolchain_name
+              for attempt in {1..3}; do
+                wget -O "$filename" "$toolchain_url" && break
+                echo "Retrying wget ($attempt/3)..."
+                sleep 5
+                if [ "$attempt" -eq 3 ]; then
+                  echo "Download failed after 3 attempts."
+                  exit 1
+                fi
+              done
+              mkdir -p "$toolchain_name"
               case "$filename" in
                 *.zip)
-                  unzip -d $toolchain_name "$filename"
+                  unzip -d "$toolchain_name" "$filename"
                   ;;
                 *.tar)
-                  tar xvf "$filename" -C $toolchain_name
+                  tar xvf "$filename" -C "$toolchain_name"
                   ;;
                 *.tar.gz)
-                  tar zxvf "$filename" -C $toolchain_name
+                  tar zxvf "$filename" -C "$toolchain_name"
                   ;;
                 *.rar)
-                  unrar x "$filename" $toolchain_name
+                  unrar x "$filename" "$toolchain_name"
                   ;;
                 *)
-                  echo "unknown file type: $filename"
+                  echo "Unknown file type: $filename"
                   ;;
               esac
             fi
+
             jq -r ".[$i].binPath[] | tostring" <<< "$toolchains" | while read -r bin_path; do
               echo "$WORKSPACE/$toolchain_name/$bin_path" >> $GITHUB_PATH
             done
           done
+
       - name: "Set args"
         id: generate-args
         env:
