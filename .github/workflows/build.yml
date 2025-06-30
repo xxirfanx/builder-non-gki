@@ -96,7 +96,7 @@ jobs:
           fi
       - name: "Set builddate"
         id: generate-builddate
-        run: echo "builddate=$(date '+%Y%m%d.%H%M')" >> $GITHUB_OUTPUT
+        run: echo "builddate=$(date '+%Y%m%d-%H%M')" >> $GITHUB_OUTPUT
 
   Build-Kernel:
     name: "Build kernel"
@@ -423,8 +423,8 @@ jobs:
         uses: softprops/action-gh-release@v2.1.0
         with:
           files: downloaded_kernels/**
-          tag_name: ${{ env.builddate }}.${{ github.run_number }}-${{ github.event.inputs.config_mode }}
-          name: Automation build for ${{ github.event.inputs.config_mode }} tag ${{ env.builddate }}.${{ github.run_number }}
+          tag_name: ${{ env.builddate }}-${{ github.event.inputs.config_mode }}
+          name: Automation build for ${{ github.event.inputs.config_mode }} tag ${{ env.builddate }} from run ${{ github.run_number }}
           prerelease: false
           draft: false
           generate_release_notes: false
