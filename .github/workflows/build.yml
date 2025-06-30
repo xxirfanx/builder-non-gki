@@ -39,6 +39,10 @@ on:
           - 'true'
           - 'false'
 
+permissions:
+  contents: write
+  discussions: write
+
 jobs:
   Set-repos:
     name: "Parse configs.json (specific or all)"
