@@ -2,7 +2,7 @@
   "kernelSource": {
     "device": "cas",
     "vendor": "xiaomi",
-    "name": "kernelsu-next",
+    "name": "sukisu-ultra",
     "defconfig": "cas_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sm8250_family",
@@ -15,11 +15,11 @@
   },
   "kernelsu": {
     "enable": true,
-    "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh",
-    "setupArg": "next",
-    "setupName": "KernelSU-Next",
-    "needPatch": true,
-    "susfsLink": "https://raw.githubusercontent.com/wodanesdag/susfs4ksu/refs/heads/next-4.19/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch"
+    "setupLink": "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh",
+    "setupArg": "susfs-main",
+    "setupName": "KernelSU",
+    "needPatch": false,
+    "susfsLink": ""
   },
   "toolchains": [
     {
