@@ -1,6 +1,6 @@
 {
   "kernelSource": {
-    "device": "enuma",
+    "device": "enuma-susfs-158",
     "vendor": "xiaomi",
     "name": "sukisu-ultra",
     "defconfig": "enuma_defconfig",

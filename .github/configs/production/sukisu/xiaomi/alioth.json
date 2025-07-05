@@ -2,7 +2,7 @@
   "kernelSource": {
     "device": "alioth",
     "vendor": "xiaomi",
-    "name": "sukisu-ultra",
+    "name": "sukisu-ultra-susfs-158",
     "defconfig": "alioth_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sm8250_family",

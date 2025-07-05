@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "RMX2020",
     "vendor": "realme",
-    "name": "sukisu-ultra",
+    "name": "sukisu-ultra-susfs-158",
     "defconfig": "RMX2020_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_realme_RMX2020",
-    "branch": "arrow-13.1"
+    "branch": "susfs-158"
   },
   "use_dtb": true,
   "kp": {
@@ -16,7 +16,7 @@
   "kernelsu": {
     "enable": true,
     "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-    "setupArg": "susfs-main",
+    "setupArg": "susfs-stable",
     "setupName": "KernelSU",
     "needPatch": false,
     "susfsLink": ""

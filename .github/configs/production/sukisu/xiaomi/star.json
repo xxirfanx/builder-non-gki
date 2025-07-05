@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "star",
     "vendor": "xiaomi",
-    "name": "sukisu-ultra",
+    "name": "sukisu-ultra-susfs-155",
     "defconfig": "star_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sm8350_family",
-    "branch": "15"
+    "branch": "susfs-155"
   },
   "use_dtb": false,
   "kp": {
@@ -15,7 +15,7 @@
   },
   "kernelsu": {
     "enable": true,
-    "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
+    "setupLink": "https://raw.githubusercontent.com/RainyXeon/SukiSU-Ultra/main/kernel/setup.sh",
     "setupArg": "susfs-main",
     "setupName": "KernelSU",
     "needPatch": false,

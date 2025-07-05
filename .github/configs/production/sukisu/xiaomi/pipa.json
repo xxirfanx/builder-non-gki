@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "pipa",
     "vendor": "xiaomi",
-    "name": "sukisu-ultra",
+    "name": "sukisu-ultra-susfs-158",
     "defconfig": "vendor/pipa_user_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_pipa",
-    "branch": "master"
+    "branch": "susfs-158"
   },
   "use_dtb": false,
   "kp": {
@@ -16,7 +16,7 @@
   "kernelsu": {
     "enable": true,
     "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-    "setupArg": "susfs-main",
+    "setupArg": "susfs-stable",
     "setupName": "KernelSU",
     "needPatch": false,
     "susfsLink": ""
