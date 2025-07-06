@@ -1,8 +1,8 @@
 {
   "kernelSource": {
-    "device": "enuma-susfs-158",
+    "device": "enuma",
     "vendor": "xiaomi",
-    "name": "sukisu-ultra",
+    "name": "sukisu-ultra-susfs-158",
     "defconfig": "enuma_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sm8250_family",
