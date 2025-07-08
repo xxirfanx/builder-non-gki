@@ -3,7 +3,7 @@
     "device": "ginkgo",
     "vendor": "xiaomi",
     "name": "how",
-    "defconfig": "vendor/arch/arm64/configs/vendor/ginkgo-perf_defconfig",
+    "defconfig": "vendor/ginkgo-perf_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kutemeikito/android_kernel_xiaomi_ginkgo",
     "branch": "fourteen/dynamic"
