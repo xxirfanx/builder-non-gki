@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "ginkgo",
     "vendor": "xiaomi",
-    "name": "sukisu-ultra-susfs-155",
-    "defconfig": "vendor/ginkgo_defconfig",
-    "extraConfig": "ksu.config",
-    "repo": "https://github.com/FlopKernel-Series/flop_trinket-mi_kernel/",
-    "branch": "floppy-new-ginkgo"
+    "name": "how",
+    "defconfig": "vendor/arch/arm64/configs/vendor/ginkgo-perf_defconfig",
+    "extraConfig": "",
+    "repo": "https://github.com/kutemeikito/android_kernel_xiaomi_ginkgo",
+    "branch": "fourteen/dynamic"
   },
   "use_dtb": false,
   "kp": {
@@ -14,7 +14,7 @@
     "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
   },
   "kernelsu": {
-    "enable": true,
+    "enable": false,
     "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
     "setupArg": "susfs-main",
     "setupName": "KernelSU",
