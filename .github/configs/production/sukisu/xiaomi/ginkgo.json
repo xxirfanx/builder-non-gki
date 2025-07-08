@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "ginkgo",
     "vendor": "xiaomi",
-    "name": "vanilla",
-    "defconfig": "defconfig",
-    "extraConfig": "vendor/ginkgo.config",
-    "repo": "https://github.com/Skyblueborb/android_kernel_xiaomi_sm6125",
-    "branch": "lineage-22.2-common"
+    "name": "sukisu-ultra-susfs-159",
+    "defconfig": "vendor/ginkgo-perf_defconfig",
+    "extraConfig": "",
+    "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_ginkgo",
+    "branch": "susfs-159"
   },
   "use_dtb": false,
   "kp": {
@@ -14,10 +14,10 @@
     "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
   },
   "kernelsu": {
-    "enable": false,
-    "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-    "setupArg": "next-susfs",
-    "setupName": "KernelSU-Next",
+    "enable": true,
+    "setupLink": "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh",
+    "setupArg": "susfs-main",
+    "setupName": "KernelSU",
     "needPatch": false,
     "susfsLink": ""
   },
