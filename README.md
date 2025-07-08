@@ -16,7 +16,7 @@ Constitutes a **serious violation** of the **GPL-3.0 License** terms in every ke
 
 ---
 
-## 📜 About the GPL-3.0 License
+## About the GPL-3.0 License
 
 This workflow, like most Android/Linux kernel source code, is licensed under the **GNU General Public License v3.0 (GPL-3.0)**, which requires:
 
@@ -28,7 +28,7 @@ Violations may result in **legal consequences** and **loss of usage rights**.
 
 ---
 
-## ❤️ Encouraged Usage
+## Encouraged Usage
 
 You are encouraged to:
 - Fork and customize this workflow for personal, academic, or non-profit community use.
@@ -37,10 +37,10 @@ You are encouraged to:
 
 ---
 
-## 📬 Report Violations
+## Report Violations
 
 If you discover that this workflow is being used commercially or in violation of the GPL-3.0 license, please report it via the Issues section or contact by email to maintain transparency and fairness.
 
 ---
 
-**⚖️ Respect GPL and the open-source community. The kernel is free — don’t turn it into a tool for profit.**
+**Respect GPL and the open-source community. The kernel is free — don’t turn it into a tool for profit.**
