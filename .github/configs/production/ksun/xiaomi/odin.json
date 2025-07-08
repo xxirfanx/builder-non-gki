@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "odin",
     "vendor": "xiaomi",
-    "name": "kernelsu-next",
+    "name": "kernelsu-next-susfs-155",
     "defconfig": "odin_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sm8350_family",
-    "branch": "15"
+    "branch": "susfs-155"
   },
   "use_dtb": false,
   "kp": {
@@ -15,11 +15,11 @@
   },
   "kernelsu": {
     "enable": true,
-    "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh",
-    "setupArg": "next",
+    "setupLink": "https://raw.githubusercontent.com/RainyXeon/SukiSU-Ultra/main/kernel/setup.sh",
+    "setupArg": "susfs-main",
     "setupName": "KernelSU-Next",
-    "needPatch": true,
-    "susfsLink": "https://raw.githubusercontent.com/wodanesdag/susfs4ksu/refs/heads/non-gki/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch"
+    "needPatch": false,
+    "susfsLink": ""
   },
   "toolchains": [
     {

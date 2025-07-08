@@ -2,7 +2,7 @@
   "kernelSource": {
     "device": "mojito",
     "vendor": "xiaomi",
-    "name": "kernelsu-next",
+    "name": "kernelsu-next-susfs-158",
     "defconfig": "mojito_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_mojito",
@@ -15,11 +15,11 @@
   },
   "kernelsu": {
     "enable": true,
-    "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh",
-    "setupArg": "next",
+    "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+    "setupArg": "next-susfs",
     "setupName": "KernelSU-Next",
-    "needPatch": true,
-    "susfsLink": "https://raw.githubusercontent.com/wodanesdag/susfs4ksu/refs/heads/non-gki/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch"
+    "needPatch": false,
+    "susfsLink": ""
   },
   "toolchains": [
     {

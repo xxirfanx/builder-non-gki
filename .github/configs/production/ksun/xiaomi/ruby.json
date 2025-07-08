@@ -2,24 +2,24 @@
   "kernelSource": {
     "device": "ruby",
     "vendor": "xiaomi",
-    "name": "kernelsu-next",
+    "name": "kernelsu-next-susfs-158",
     "defconfig": "ruby_defconfig",
     "extraConfig": "",
-    "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_ruby",
-    "branch": "ksu-type-root-impl"
+    "repo": "https://github.com/RainyXeon/MoonWake",
+    "branch": "susfs-158"
   },
   "use_dtb": false,
   "kp": {
     "use": false,
-    "kpimg_link": ""
-  }, 
+    "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
+  },
   "kernelsu": {
     "enable": true,
-    "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh",
-    "setupArg": "next",
+    "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+    "setupArg": "next-susfs",
     "setupName": "KernelSU-Next",
-    "needPatch": true,
-    "susfsLink": "https://raw.githubusercontent.com/wodanesdag/susfs4ksu/refs/heads/next-4.19/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch"
+    "needPatch": false,
+    "susfsLink": ""
   },
   "toolchains": [
     {
@@ -54,12 +54,12 @@
     }
   },
   "image": {
-    "use": false,
+    "use": true,
     "imageUrl": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_ruby/releases/download/cloud/boot.img",
     "imageName": "boot.img"
   },
   "AnyKernel3": {
-    "use": true,
+    "use": false,
     "release": true,
     "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
     "branch": "ruby"
