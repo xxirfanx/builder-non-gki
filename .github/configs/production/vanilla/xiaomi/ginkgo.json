@@ -57,7 +57,7 @@
     "use": true,
     "release": true,
     "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-    "branch": "ginkgo"
+    "branch": "xiaomi_ginkgo"
   },
   "image": {
     "use": false,
