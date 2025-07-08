@@ -3,7 +3,7 @@
     "device": "ginkgo",
     "vendor": "xiaomi",
     "name": "sukisu-ultra-susfs-159",
-    "defconfig": "vendor/ginkgo-perf_defconfig",
+    "defconfig": "vendor/moe_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_ginkgo",
     "branch": "susfs-159"
