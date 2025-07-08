@@ -23,8 +23,8 @@
   },
   "toolchains": [
     {
-      "repo": "https://gitlab.com/sarthakroy2002/android_prebuilts_clang_host_linux-x86_clang-r437112b",
-      "branch": "master",
+      "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r547379.tar.gz",
+      "branch": "15.0",
       "name": "clang-AOSP",
       "binPath": ["./bin"]
     }
