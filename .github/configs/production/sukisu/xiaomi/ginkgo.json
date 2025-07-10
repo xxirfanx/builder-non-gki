@@ -2,7 +2,7 @@
   "kernelSource": {
     "device": "ginkgo",
     "vendor": "xiaomi",
-    "name": "sukisu-ultra",
+    "name": "sukisu-ultra-susfs-159",
     "defconfig": "vendor/ginkgo-perf_defconfig",
     "extraConfig": "",
     "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
@@ -10,13 +10,13 @@
   },
   "use_dtb": true,
   "kp": {
-    "use": false,
+    "use": true,
     "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
   },
   "kernelsu": {
     "enable": true,
     "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-    "setupArg": "nongki",
+    "setupArg": "susfs-revert",
     "setupName": "KernelSU",
     "needPatch": false,
     "susfsLink": ""
