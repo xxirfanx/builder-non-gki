@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "ginkgo",
     "vendor": "xiaomi",
-    "name": "sukisu-ultra-susfs-157",
+    "name": "sukisu-ultra",
     "defconfig": "vendor/ginkgo-perf_defconfig",
     "extraConfig": "",
-    "repo": "https://github.com/kutemeikito/android_kernel_xiaomi_ginkgo",
-    "branch": "fourteen/dynamic"
+    "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
+    "branch": "revert-29-44"
   },
   "use_dtb": true,
   "kp": {
@@ -15,8 +15,8 @@
   },
   "kernelsu": {
     "enable": true,
-    "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-    "setupArg": "susfs-1.5.7",
+    "setupLink": "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh",
+    "setupArg": "main",
     "setupName": "KernelSU",
     "needPatch": false,
     "susfsLink": ""
@@ -45,6 +45,7 @@
   "params": {
     "ARCH": "arm64",
     "CC": "toolchain/clang-AOSP/bin/clang",
+    "build_out": "Image.gz-dtb dtbo.img",
     "externalCommand": {
       "KBUILD_BUILD_HOST": "perfc.org",
       "KBUILD_BUILD_USER": "rainyxeon",

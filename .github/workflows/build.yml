@@ -130,6 +130,7 @@ jobs:
       kernelSUsetupName: ${{ matrix.repos.kernelsu.setupName }}
       kernelSUsusfsLink: ${{ matrix.repos.kernelsu.susfsLink }}
       kernelSUneedPatch: ${{ matrix.repos.kernelsu.needPatch }}
+      build_out: ${{ matrix.repos.params.build_out }}
 
       useKernelPatch: ${{ matrix.repos.kp.use }}
       kpKpimgLink: ${{ matrix.repos.kp.kpimg_link }}
@@ -331,7 +332,7 @@ jobs:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
           echo "PATH Variable: $PATH"
-          make KCFLAGS="-O2" ${{ env.args }}
+          make KCFLAGS="-O2" ${{ env.args }} ${{ env.build_out }}
       - name: "Push to out_kernel folder and download ramdisk"
         env:
           arch: ${{ steps.generate-args.outputs.ARCH }}
@@ -366,6 +367,9 @@ jobs:
             cd ..
           else
             cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/Image ./out_kernel/
+          fi
+          if [ -f "${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtbo.img" ]; then
+            cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtbo.img ./out_kernel/
           fi
           ls -al ./out_kernel/
       - name: "Patch with kernel patch"
