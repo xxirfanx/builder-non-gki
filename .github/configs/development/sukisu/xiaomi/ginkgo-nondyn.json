@@ -2,11 +2,11 @@
   "kernelSource": {
     "device": "ginkgo",
     "vendor": "xiaomi",
-    "name": "bimasakti-sukisu-ultra-susfs-159-kpm",
+    "name": "bimasakti-sukisu-nondynamic",
     "defconfig": "vendor/ginkgo-perf_defconfig",
-    "extraConfig": "",
+    "extraConfig": "vendor/ginkgo_non_a11.config",
     "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
-    "branch": "revert-29-4"
+    "branch": "revert-29-4-nondynamic"
   },
   "use_dtb": true,
   "kp": {
@@ -66,7 +66,7 @@
     "use": true,
     "release": true,
     "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-    "branch": "xiaomi_ginkgo"
+    "branch": "xiaomi_ginkgo-nondynamic"
   },
   "image": {
     "use": false,
