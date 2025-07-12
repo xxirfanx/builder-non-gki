@@ -67,7 +67,7 @@ jobs:
             if [ -f "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" ]; then
               echo "Using specified config file: ./.github/configs/$CONFIG_TYPE/$CONFIG_FILE"
               echo "repos<<EOF" >> $GITHUB_OUTPUT
-              jq -s '[.[]]' "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" >> $GITHUB_OUTPUT
+              jq -s '[.[][]]' "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" >> $GITHUB_OUTPUT
               echo "EOF" >> $GITHUB_OUTPUT
             else
               echo "ERROR: Specified config file './.github/configs/$CONFIG_TYPE/$CONFIG_FILE' does not exist!" >&2
@@ -91,7 +91,7 @@ jobs:
             fi
 
             echo "repos<<EOF" >> $GITHUB_OUTPUT
-            jq -s '[.[]]' $FILES >> $GITHUB_OUTPUT
+            jq -s '[.[][]]' $FILES >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
           fi
       - name: "Set builddate"
