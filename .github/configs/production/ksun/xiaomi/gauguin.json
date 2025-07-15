@@ -1,24 +1,24 @@
-﻿[
+[
   {
     "kernelSource": {
-      "device": "ruby",
+      "device": "gauguin",
       "vendor": "xiaomi",
-      "name": "sukisu-ultra-susfs-158",
-      "defconfig": "ruby_defconfig",
+      "name": "kernelsu-next",
+      "defconfig": "gauguin_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/RainyXeon/MoonWake",
-      "branch": "susfs-158"
+      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_gauguin",
+      "branch": "ksu"
     },
     "use_dtb": false,
     "kp": {
-      "use": true,
-      "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
+      "use": false,
+      "kpimg_link": ""
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-stable",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next-susfs",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
@@ -34,7 +34,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "build_out": "Image.gz-dtb",
+      "build_out": "",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
@@ -57,14 +57,14 @@
     },
     "image": {
       "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img",
-      "imageName": "xiaomi-ruby-original-boot.img"
+      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-gauguin-original-boot.img",
+      "imageName": "xiaomi-gauguin-original-boot.img"
     },
     "AnyKernel3": {
       "use": false,
       "release": true,
-      "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby"
+      "repo": "",
+      "branch": ""
     }
   }
 ]
