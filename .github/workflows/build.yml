@@ -7,18 +7,18 @@ on:
   workflow_dispatch:
     inputs:
       config_type:
-        description: 'Choose a config type'
+        description: "Choose a config type"
         required: true
         type: choice
-        default: 'production'
+        default: "production"
         options:
           - production
           - development
       config_mode:
-        description: 'Choose a root solution, if this not empty, it will only build that specific type'
+        description: "Choose a root solution, if this not empty, it will only build that specific type"
         required: false
         type: choice
-        default: 'everything'
+        default: "everything"
         options:
           - everything
           - ksun
@@ -26,18 +26,18 @@ on:
           - vanilla
           - kp
       config_file:
-        description: 'Path to a specific config JSON file (optional). Leave blank to use all configs.'
+        description: "Path to a specific config JSON file (optional). Leave blank to use all configs."
         required: false
-        default: ''
+        default: ""
         type: string
       release_mode:
-        description: 'Create a release for this run?'
+        description: "Create a release for this run?"
         required: true
         type: choice
-        default: 'false'
+        default: "false"
         options:
-          - 'true'
-          - 'false'
+          - "true"
+          - "false"
 
 permissions:
   contents: write
@@ -93,7 +93,16 @@ jobs:
             fi
 
             echo "repos<<EOF" >> $GITHUB_OUTPUT
-            jq -s '[.[][][]]' $FILES >> $GITHUB_OUTPUT
+            for process_file in $FILES; do
+              echo "Checking: $process_file"
+              if ! jq . "$process_file" >/dev/null 2>&1; then
+                echo "[+] Invalid JSON: $process_file"
+                exit 1
+              else
+                echo "[-] Valid: $process_file"
+                jq -s '[.[][]]' $process_file >> $GITHUB_OUTPUT
+              fi
+            done
             echo "EOF" >> $GITHUB_OUTPUT
           fi
       - name: "Set builddate"
@@ -192,7 +201,7 @@ jobs:
         run: |
           git clone --recursive --depth=1 -j $(nproc) --branch $KERNEL_BRANCH $KERNEL_REPO $KERNEL_NAME
           echo -e "\n ! Kernel is at commit: $(git -C $KERNEL_NAME rev-parse HEAD)\n"
-          echo "Clone kernel source => ($KERNEL_REPO)"         
+          echo "Clone kernel source => ($KERNEL_REPO)"
       - name: "Get toolchains"
         env:
           toolchains: "${{ toJSON(matrix.repos.toolchains) }}"
@@ -416,7 +425,7 @@ jobs:
           path: ./AnyKernel3/anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.zip
       - name: "Pack kernel image"
         if: ${{ env.useImage == 'true' }}
-        run: | 
+        run: |
           curl -L -O https://github.com/Shubhamvis98/AIK/raw/4ac321dfd48e16344e6146c505708aa720ff0bb3/bin/magiskboot_x86
           chmod +x ./magiskboot_x86
           mkdir wrap_kernel
