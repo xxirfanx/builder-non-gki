@@ -95,7 +95,14 @@ jobs:
             echo "repos<<EOF" >> $GITHUB_OUTPUT
             for process_file in $FILES; do
               echo "Checking: $process_file"
-              jq '.[]' "$process_file" >> $GITHUB_OUTPUT
+              if ! jq '.[]' "$process_file" >/dev/null 2>&1; then
+                echo "[+] Invalid JSON: $process_file"
+                jq '.[]' "$process_file"
+                exit 1
+              else
+                echo "[-] Valid: $process_file"
+                jq '.[]' "$process_file" >> $GITHUB_OUTPUT
+              fi
             done
             echo "EOF" >> $GITHUB_OUTPUT
           fi
