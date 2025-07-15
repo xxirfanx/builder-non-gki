@@ -92,18 +92,21 @@ jobs:
               exit 1
             fi
 
-            echo "repos<<EOF" >> $GITHUB_OUTPUT
+            repos_json="[]"
             for process_file in $FILES; do
               echo "Checking: $process_file"
-              if ! jq '.[]' "$process_file" >/dev/null 2>&1; then
+              if ! jq empty "$process_file" >/dev/null 2>&1; then
                 echo "[+] Invalid JSON: $process_file"
-                jq '.[]' "$process_file"
+                jq '.' "$process_file"
                 exit 1
               else
                 echo "[-] Valid: $process_file"
-                jq '.[]' "$process_file" >> $GITHUB_OUTPUT
+                repos_json=$(jq -s 'add' <(echo "$repos_json") "$process_file")
               fi
             done
+
+            echo "repos<<EOF" >> $GITHUB_OUTPUT
+            echo "$repos_json" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
           fi
       - name: "Set builddate"
