@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "ginkgo",
       "vendor": "xiaomi",
-      "name": "bimasakti-ksun",
+      "name": "bimasakti-kernelsu-next",
       "defconfig": "vendor/ginkgo-perf_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
@@ -79,7 +79,7 @@
     "kernelSource": {
       "device": "ginkgo",
       "vendor": "xiaomi",
-      "name": "bimasakti-ksun-nondynamic",
+      "name": "bimasakti-kernelsu-next-nondynamic",
       "defconfig": "vendor/ginkgo-perf_defconfig",
       "extraConfig": "vendor/ginkgo_non_a11.config",
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
@@ -155,7 +155,7 @@
     "kernelSource": {
       "device": "ginkgo",
       "vendor": "xiaomi",
-      "name": "bimasakti-ksun-nondynamic-a11",
+      "name": "bimasakti-kernelsu-next-nondynamic-a11",
       "defconfig": "vendor/ginkgo-perf_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
