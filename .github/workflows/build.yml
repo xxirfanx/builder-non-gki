@@ -100,7 +100,7 @@ jobs:
                 exit 1
               else
                 echo "[-] Valid: $process_file"
-                jq -s '[.[][]]' $process_file >> $GITHUB_OUTPUT
+                jq -s '[.[]]' $process_file >> $GITHUB_OUTPUT
               fi
             done
             echo "EOF" >> $GITHUB_OUTPUT
