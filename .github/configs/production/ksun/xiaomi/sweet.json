@@ -10,6 +10,7 @@
       "branch": "susfs-159"
     },
     "use_dtb": false,
+    "use_python2": false,
     "kp": {
       "use": false,
       "kpimg_link": ""

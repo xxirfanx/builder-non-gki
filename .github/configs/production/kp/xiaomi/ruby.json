@@ -10,6 +10,7 @@
       "branch": "main"
     },
     "use_dtb": false,
+    "use_python2": false,
     "kp": {
       "use": true,
       "kpimg_link": "https://github.com/kernel-build-from-rainyland/StarifyBuilder/releases/download/cloud/kpimg"
