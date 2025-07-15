@@ -86,7 +86,7 @@ jobs:
               FILES=$(find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json")
             else
               echo "Using all JSON files in .github/configs/$CONFIG_TYPE/"
-              find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json"
+              find ".github/configs/$CONFIG_TYPE" -type f -name "*.json"
               FILES=$(find ".github/configs/$CONFIG_TYPE" -type f -name '*.json')
             fi
 
