@@ -67,7 +67,10 @@ jobs:
             if [ -f "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" ]; then
               echo "Using specified config file: ./.github/configs/$CONFIG_TYPE/$CONFIG_FILE"
               echo "repos<<EOF" >> $GITHUB_OUTPUT
-              jq -s '[.[][]]' "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" >> $GITHUB_OUTPUT
+              CONFIG_PATH="./.github/configs/$CONFIG_TYPE/$CONFIG_FILE"
+              # Strip BOM
+              sed -i '1s/^\xEF\xBB\xBF//' "$CONFIG_PATH"
+              jq -s '[.[][]]' "$CONFIG_PATH" >> $GITHUB_OUTPUT
               echo "EOF" >> $GITHUB_OUTPUT
             else
               echo "ERROR: Specified config file './.github/configs/$CONFIG_TYPE/$CONFIG_FILE' does not exist!" >&2
@@ -95,6 +98,8 @@ jobs:
             repos_json="[]"
             for process_file in $FILES; do
               echo "Checking: $process_file"
+              # Strip BOM if present (in-place)
+              sed -i '1s/^\xEF\xBB\xBF//' "$process_file"
               if ! jq empty "$process_file" >/dev/null 2>&1; then
                 echo "[+] Invalid JSON: $process_file"
                 jq '.' "$process_file"
