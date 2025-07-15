@@ -79,6 +79,7 @@ jobs:
 
             if [[ "$CONFIG_MODE" != "everything" ]]; then
               echo "Using only files starting with '$CONFIG_MODE-' in .github/configs/$CONFIG_TYPE/"
+              find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json"
               FILES=$(find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json")
             else
               echo "Using all JSON files in .github/configs/$CONFIG_TYPE/"
