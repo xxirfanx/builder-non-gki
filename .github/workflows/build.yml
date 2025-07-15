@@ -78,11 +78,12 @@ jobs:
             echo "No config_file input provided."
 
             if [[ "$CONFIG_MODE" != "everything" ]]; then
-              echo "Using only files starting with '$CONFIG_MODE-' in .github/configs/$CONFIG_TYPE/"
+              echo "Using only files from '$CONFIG_MODE' in .github/configs/$CONFIG_TYPE/"
               find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json"
               FILES=$(find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json")
             else
               echo "Using all JSON files in .github/configs/$CONFIG_TYPE/"
+              find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json"
               FILES=$(find ".github/configs/$CONFIG_TYPE" -type f -name '*.json')
             fi
 
@@ -92,7 +93,7 @@ jobs:
             fi
 
             echo "repos<<EOF" >> $GITHUB_OUTPUT
-            jq -s '[.[][]]' $FILES >> $GITHUB_OUTPUT
+            jq -s '[.[]]' $FILES >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
           fi
       - name: "Set builddate"
