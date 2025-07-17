@@ -1,13 +1,13 @@
-﻿[
+[
   {
     "kernelSource": {
-      "device": "sweet",
+      "device": "gauguin",
       "vendor": "xiaomi",
-      "name": "kernelsu-next-susfs-159",
-      "defconfig": "sweet_defconfig",
+      "name": "sukisu-ultra",
+      "defconfig": "gauguin_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sweet",
-      "branch": "susfs-159"
+      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_gauguin",
+      "branch": "ksu"
     },
     "use_dtb": false,
     "use_python2": false,
@@ -17,11 +17,11 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next-sweet",
-      "setupName": "KernelSU-Next",
-      "needPatch": true,
-      "susfsLink": "https://github.com/sidex15/KernelSU-Next/commit/e65b444edfd5434709323ff57a19df9d16b7528a.patch"
+      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
+      "setupArg": "nongki",
+      "setupName": "KernelSU",
+      "needPatch": false,
+      "susfsLink": ""
     },
     "toolchains": [
       {
@@ -35,7 +35,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "build_out": "Image.gz-dtb",
+      "build_out": "",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
@@ -56,16 +56,16 @@
         "LLVM_DIS": "clang-AOSP/bin/llvm-dis"
       }
     },
-    "AnyKernel3": {
-      "use": true,
-      "release": true,
-      "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "sweet"
-    },
     "image": {
+      "use": true,
+      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-gauguin-original-boot.img",
+      "imageName": "xiaomi-gauguin-original-boot.img"
+    },
+    "AnyKernel3": {
       "use": false,
-      "imageUrl": "",
-      "imageName": ""
+      "release": true,
+      "repo": "",
+      "branch": ""
     }
   }
 ]
