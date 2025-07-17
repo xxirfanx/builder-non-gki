@@ -7,7 +7,7 @@
       "defconfig": "vendor/ginkgo-perf_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
-      "branch": "fourteen/dynamic"
+      "branch": "revert-16-7"
     },
     "use_dtb": true,
     "use_python2": true,
