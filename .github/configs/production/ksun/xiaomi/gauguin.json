@@ -7,7 +7,7 @@
       "defconfig": "gauguin_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_gauguin",
-      "branch": "ksu"
+      "branch": "lineage-22.2"
     },
     "use_dtb": false,
     "use_python2": false,
@@ -17,8 +17,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next-susfs",
+      "setupLink": "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next",
       "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
