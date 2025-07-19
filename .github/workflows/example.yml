@@ -1,6 +1,5 @@
 name: Manual Run Example
 
-# Triggered manually by a user
 on:
   workflow_dispatch:
     inputs:
@@ -18,8 +17,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Use secret token in environment variable
+        shell: bash
         run: |
           echo "Running deployment to ${{ github.event.inputs.environment }}"
-          echo "Using secret token of length: ${#DEPLOY_SECRET}"
+          
+          if [ -z "$DEPLOY_SECRET" ]; then
+            echo "🚨 Secret is empty or not set"
+          else
+            echo "✅ Secret is set. Length: ${#DEPLOY_SECRET}"
+          fi
         env:
           DEPLOY_SECRET: ${{ secrets.HELLO_WORLD }}
