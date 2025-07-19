@@ -1,0 +1,25 @@
+name: Manual Run Example
+
+# Triggered manually by a user
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Which environment to deploy to?'
+        required: true
+        default: 'staging'
+
+jobs:
+  manual-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use secret token in environment variable
+        run: |
+          echo "Running deployment to ${{ github.event.inputs.environment }}"
+          echo "Using secret token of length: ${#DEPLOY_SECRET}"
+        env:
+          DEPLOY_SECRET: ${{ secrets.HELLO_WORLD }}
