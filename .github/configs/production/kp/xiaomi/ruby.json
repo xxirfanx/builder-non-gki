@@ -13,7 +13,7 @@
     "use_python2": false,
     "kp": {
       "use": true,
-      "kpimg_link": "https://github.com/kernel-build-from-rainyland/StarifyBuilder/releases/download/cloud/kpimg"
+      "kpimg_link": "https://github.com/bmax121/KernelPatch/releases/download/0.12.0/kpimg-android"
     },
     "kernelsu": {
       "enable": false,
@@ -57,12 +57,12 @@
       }
     },
     "image": {
-      "use": false,
+      "use": true,
       "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img",
       "imageName": "xiaomi-ruby-original-boot.img"
     },
     "AnyKernel3": {
-      "use": true,
+      "use": false,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
       "branch": "ruby"

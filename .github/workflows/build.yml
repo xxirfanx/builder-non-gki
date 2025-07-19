@@ -405,6 +405,8 @@ jobs:
           ls -al ./out_kernel/
       - name: "Patch with kernel patch"
         if: ${{ env.useKernelPatch == 'true' }}
+        env:
+          SUPER_SECRET: ${{ secrets.AndroidPatchPassword }}
         run: |
           mkdir kernel_patch_processing
           cd kernel_patch_processing
@@ -414,7 +416,7 @@ jobs:
           if [ -e "./kpimg-android" ]; then
             mv ./kpimg-android ./kpimg
           fi
-          ./kptools-linux -p -s "RainyPatch@111" -i ../out_kernel/Image -k kpimg -o ./oImage
+          ./kptools-linux -p -s "$SUPER_SECRET" -i ../out_kernel/Image -k kpimg -o ./oImage
           rm -rf ../out_kernel/Image
           mv ./oImage ../out_kernel/Image
       - name: "Pack AnyKernel3.zip"
