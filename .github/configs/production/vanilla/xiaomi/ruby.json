@@ -6,7 +6,7 @@
       "name": "vanilla",
       "defconfig": "ruby_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_ruby",
+      "repo": "https://github.com/RainyXeon/MoonWake",
       "branch": "main"
     },
     "use_dtb": false,
