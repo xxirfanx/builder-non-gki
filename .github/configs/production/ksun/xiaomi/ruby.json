@@ -18,7 +18,7 @@
     "kernelsu": {
       "enable": true,
       "setupLink": "https://raw.githubusercontent.com/sidex15/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next-susfs-experimental",
+      "setupArg": "next-sweet-exp",
       "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
