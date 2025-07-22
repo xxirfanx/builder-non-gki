@@ -17,8 +17,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next",
+      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next-Custom/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next-susfs",
       "setupName": "KernelSU-Next-Custom",
       "needPatch": false,
       "susfsLink": ""
