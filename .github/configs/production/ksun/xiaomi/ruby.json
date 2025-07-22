@@ -21,7 +21,7 @@
       "setupArg": "next",
       "setupName": "KernelSU-Next",
       "needPatch": true,
-      "susfsLink": "https://github.com/sidex15/KernelSU-Next/commit/e65b444edfd5434709323ff57a19df9d16b7528a.patch"
+      "susfsLink": "https://github.com/sidex15/KernelSU-Next/commit/c623bb233be305f7dac7135d198d6b375aa33410.patch"
     },
     "toolchains": [
       {
