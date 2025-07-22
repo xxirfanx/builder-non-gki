@@ -72,8 +72,7 @@
     },
     "image": {
       "use": false,
-      "imageUrl": "",
-      "imageName": ""
+      "imageUrl": ""
     }
   }
 ]

@@ -72,8 +72,7 @@
     },
     "image": {
       "use": false,
-      "imageUrl": "",
-      "imageName": ""
+      "imageUrl": ""
     }
   },
   {
@@ -149,8 +148,7 @@
     },
     "image": {
       "use": false,
-      "imageUrl": "",
-      "imageName": ""
+      "imageUrl": ""
     }
   },
   {
@@ -226,8 +224,7 @@
     },
     "image": {
       "use": false,
-      "imageUrl": "",
-      "imageName": ""
+      "imageUrl": ""
     }
   }
 ]

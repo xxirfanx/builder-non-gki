@@ -58,8 +58,7 @@
     },
     "image": {
       "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img",
-      "imageName": "xiaomi-ruby-original-boot.img"
+      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img"
     },
     "AnyKernel3": {
       "use": false,
