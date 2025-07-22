@@ -168,13 +168,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             build-essential bc gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi \
-            libssl-dev libfl-dev wget2 curl \
+            libssl-dev libfl-dev aria2 curl \
             git ftp lftp libarchive-tools ccache python3 python3-pip \
             zip unzip tar gzip bzip2 rar unrar binwalk libelf-dev \
             checkinstall libncursesw5-dev libsqlite3-dev tk-dev \
             libgdbm-dev libc6-dev libbz2-dev libffi-dev
           if [[ "${{ env.use_python2 }}" == "true" ]]; then
-            wget2 --max-threads=8 --progress=bar https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+            aria2c -x 16 -s 16 https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
             tar -xvf Python-2.7.18.tgz
             cd Python-2.7.18
             ./configure
@@ -245,8 +245,8 @@ jobs:
               echo "Downloading $toolchain_url"
               filename="${toolchain_url##*/}"
               for attempt in {1..3}; do
-                wget2 --max-threads=8 --progress=bar -O "$filename" "$toolchain_url" && break
-                echo "Retrying wget2 ($attempt/3)..."
+                aria2c -x 16 -s 16 -o "$filename" "$toolchain_url" && break
+                echo "Retrying aria2 ($attempt/3)..."
                 sleep 5
                 if [ "$attempt" -eq 3 ]; then
                   echo "Download failed after 3 attempts."
