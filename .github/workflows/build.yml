@@ -408,8 +408,8 @@ jobs:
         run: |
           mkdir kernel_patch_processing
           cd kernel_patch_processing
-          curl -L -O -o kptools-linux https://github.com/bmax121/KernelPatch/releases/download/0.11.3/kptools-linux
-          curl -L -O -o kpimg-android ${{ env.kpKpimgLink }}
+          curl -L -o kptools-linux https://github.com/bmax121/KernelPatch/releases/download/0.11.3/kptools-linux
+          curl -L -o kpimg-android ${{ env.kpKpimgLink }}
           chmod +x ./kptools-linux
           ./kptools-linux -p -s "$APATCH_KEY" -i ../out_kernel/Image -k kpimg-android -o ./oImage
           rm -rf ../out_kernel/Image
@@ -443,7 +443,7 @@ jobs:
           chmod +x ./magiskboot_x86
           mkdir wrap_kernel
           cd wrap_kernel
-          curl -L -O -o original-boot.img ${{ env.ogImageLink }}
+          curl -L -o original-boot.img ${{ env.ogImageLink }}
           ../magiskboot_x86 unpack original-boot.img
           rm -rf ./kernel
           mv ../out_kernel/Image ./kernel
