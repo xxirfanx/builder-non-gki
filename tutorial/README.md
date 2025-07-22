@@ -233,8 +233,8 @@ Use this config template below (remove the comments before continue)
   },
   "toolchains": [
     {
-      "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r547379.tar.gz", // Don't touch this if you don't know what are you doing
-      "branch": "15.0", // Don't touch this if you don't know what are you doing
+      "repo": "https://gitlab.com/RainyXeon/clang-r547379", // Don't touch this if you don't know what are you doing
+      "branch": "master", // Don't touch this if you don't know what are you doing
       "name": "clang-AOSP", // Don't touch this if you don't know what are you doing
       "binPath": ["./bin"] // Don't touch this if you don't know what are you doing
     }
