@@ -17,8 +17,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-revert",
+      "setupLink": "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh",
+      "setupArg": "susfs-main",
       "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
@@ -93,8 +93,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-revert",
+      "setupLink": "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh",
+      "setupArg": "susfs-main",
       "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
@@ -169,8 +169,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-revert",
+      "setupLink": "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh",
+      "setupArg": "susfs-main",
       "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
