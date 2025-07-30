@@ -25,8 +25,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r563880",
+        "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
       }
@@ -37,6 +37,7 @@
       "CC": "clang-AOSP/bin/clang",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
+        "KCFLAGS": "-O3",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
