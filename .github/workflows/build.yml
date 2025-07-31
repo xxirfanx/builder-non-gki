@@ -216,9 +216,6 @@ jobs:
           git clone --recursive --depth=1 -j $(nproc) --branch $KERNEL_BRANCH $KERNEL_REPO $KERNEL_NAME
           echo -e "\n ! Kernel is at commit: $(git -C $KERNEL_NAME rev-parse HEAD)\n"
           echo "Clone kernel source => ($KERNEL_REPO)"
-          cd $KERNEL_NAME
-          [ -e kernel/sched_assist ] && echo "Valid" || echo "Broken"
-          exit 1
       - name: "Get toolchains"
         env:
           toolchains: "${{ toJSON(matrix.repos.toolchains) }}"
