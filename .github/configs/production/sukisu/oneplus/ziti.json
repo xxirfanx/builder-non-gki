@@ -35,7 +35,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-Wno-error=strict-prototypes",
+      "KCFLAGS": "-Wno-error=strict-prototypes -Wno-implicit-int",
       "build_out": "Image",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
