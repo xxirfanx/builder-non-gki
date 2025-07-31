@@ -35,9 +35,9 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
+      "KCFLAGS": "-Wno-error=strict-prototypes",
       "build_out": "Image",
       "externalCommand": {
-        "KCFLAGS": "-Wno-error=strict-prototypes",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",

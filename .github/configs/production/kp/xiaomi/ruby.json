@@ -35,9 +35,9 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
+      "KCFLAGS": "-O2",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
-        "KCFLAGS": "-O2",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
