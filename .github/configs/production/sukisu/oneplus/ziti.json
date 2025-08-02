@@ -4,7 +4,7 @@
       "device": "ziti",
       "vendor": "oneplus",
       "name": "sukisu-ultra-susfs-155",
-      "defconfig": "ziti_defconfig",
+      "defconfig": "ziti_stock_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/kernel_oneplus_sm7325",
       "branch": "susfs-155"
@@ -26,7 +26,7 @@
     "toolchains": [
       {
         "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
-        "branch": "main",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
       }
