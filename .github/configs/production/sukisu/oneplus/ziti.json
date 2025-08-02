@@ -36,7 +36,7 @@
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-Wno-error=strict-prototypes -Wno-implicit-int",
-      "build_out": "Image",
+      "build_out": "Image dtbo.img",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
@@ -62,10 +62,10 @@
       "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/oneplus-ziti-original-boot.img"
     },
     "AnyKernel3": {
-      "use": false,
+      "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ziti"
+      "branch": "master"
     }
   }
 ]
