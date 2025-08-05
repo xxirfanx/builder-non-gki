@@ -14,6 +14,7 @@ on:
         options:
           - production
           - development
+          - package
       config_mode:
         description: "Choose a root solution, if this not empty, it will only build that specific type"
         required: false
