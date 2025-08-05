@@ -191,7 +191,7 @@ jobs:
         id: ccache_key
         run: |
           ccache -o compression=false -o cache_dir=$HOME/.ccache
-          echo "CACHE_KEY=$(echo -n "${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}" | sha1sum | cut -c1-12)" >> $GITHUB_OUTPUT
+          echo "CACHE_KEY=$(echo -n "${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.KERNEL_NAME }}" | sha1sum | cut -c1-12)" >> $GITHUB_OUTPUT
       - name: "Cache ccache files"
         if: ${{ env.ccache == 'true' }}
         uses: actions/cache@v3
@@ -199,9 +199,9 @@ jobs:
           path: |
             ~/.ccache
             ${{ env.OUT_DIR }}
-          key: ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}
+          key: ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}
           restore-keys: |
-            ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}
+            ccache-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.KERNEL_NAME }}-${{ steps.ccache_key.outputs.CACHE_KEY }}
       - name: "Setup Anykernel3"
         if: ${{ env.useAnykernel == 'true' }}
         env:
