@@ -351,7 +351,9 @@ jobs:
         run: |
           if [[ -n "${{ env.EXTRA_CONFIG_NAME }}" ]]; then
             make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
-            make ${{ env.args }} ${{ env.EXTRA_CONFIG_NAME }}
+            for extra_config_config_file in item1 item2 item3; do
+              make ${{ env.args }} $extra_config_config_file
+            done
           else
             echo "PATH Variable: $PATH"
             make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
