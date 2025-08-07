@@ -475,7 +475,6 @@ jobs:
   publish:
     needs: [Set-repos, Build-Kernel]
     runs-on: ubuntu-latest
-    if: ${{ always() && github.event.inputs.release_mode == 'true' }}
     env:
       builddate: "${{ needs.Set-repos.outputs.builddate }}"
     steps:
@@ -494,6 +493,7 @@ jobs:
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2.1.0
+        if: ${{ always() && github.event.inputs.release_mode == 'true' }}
         with:
           files: downloaded_kernels/**
           tag_name: ${{ env.builddate }}.${{ github.run_number }}-${{ github.event.inputs.config_mode }}
