@@ -39,6 +39,14 @@ on:
         options:
           - "true"
           - "false"
+      full_dump:
+        description: "Create a full dump .zip file for this run?"
+        required: true
+        type: choice
+        default: "false"
+        options:
+          - "true"
+          - "false"
 
 permissions:
   contents: write
@@ -476,6 +484,13 @@ jobs:
         with:
           path: downloaded_kernels
           merge-multiple: true
+
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v4
+        if: ${{ always() && github.event.inputs.full_dump == 'true' }}
+        with:
+          name: full-dump
+          path: downloaded_kernels
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2.1.0
