@@ -72,7 +72,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "ksun-susfs-159",
+      "name": "ksun-susfs-159-ln8000",
       "defconfig": "ruby_defconfig",
       "extraConfig": "ln8000.config",
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
@@ -141,7 +141,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "sukisu-susfs-159",
+      "name": "sukisu-susfs-159-ln8000",
       "defconfig": "ruby_defconfig",
       "extraConfig": "ln8000.config",
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
@@ -210,7 +210,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "rksu-susfs-159",
+      "name": "rksu-susfs-159-ln8000",
       "defconfig": "ruby_defconfig",
       "extraConfig": "ln8000.config",
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
