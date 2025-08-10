@@ -461,7 +461,11 @@ jobs:
           curl -L -o original-boot.img ${{ env.ogImageLink }}
           ../magiskboot_x86 unpack original-boot.img
           rm -rf ./kernel
-          mv ../out_kernel/Image ./kernel
+          cp ../out_kernel/Image ./kernel
+          if [[ "${{ env.use_dtb }}" == "true" ]]; then
+            rm -rf ./dtb
+            cp ../out_kernel/dtb ./dtb
+          fi
           ../magiskboot_x86 repack original-boot.img
           cd ..
           cp -f ./wrap_kernel/new-boot.img ./out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img

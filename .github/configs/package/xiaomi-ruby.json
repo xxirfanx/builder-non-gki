@@ -9,7 +9,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "main"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
@@ -78,7 +78,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
@@ -147,7 +147,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": true,
@@ -216,7 +216,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
