@@ -9,7 +9,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "main"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
@@ -36,7 +36,7 @@
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2",
-      "build_out": "Image.gz-dtb",
+      "build_out": "Image.gz-dtb dtbo.img",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
@@ -78,7 +78,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
@@ -105,7 +105,7 @@
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2",
-      "build_out": "Image.gz-dtb",
+      "build_out": "Image.gz-dtb dtbo.img",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
