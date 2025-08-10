@@ -3,17 +3,17 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "sukisu-susfs-159-ln8000",
+      "name": "sukisu-susfs-159",
       "defconfig": "sweet_defconfig",
-      "extraConfig": "vendor/ln8000.config",
-      "repo": "https://github.com/kernel-build-from-rainyland/vantom_next_kernel_xiaomi_sm6150",
-      "branch": "VantomNext"
+      "extraConfig": "",
+      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sweet",
+      "branch": "susfs-159"
     },
     "use_dtb": false,
     "use_python2": false,
     "kp": {
-      "use": false,
-      "kpimg_link": ""
+      "use": true,
+      "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
     },
     "kernelsu": {
       "enable": true,
@@ -72,11 +72,11 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "ksun-susfs-159-ln8000",
+      "name": "ksun-susfs-159",
       "defconfig": "sweet_defconfig",
-      "extraConfig": "vendor/ln8000.config",
-      "repo": "https://github.com/kernel-build-from-rainyland/vantom_next_kernel_xiaomi_sm6150",
-      "branch": "VantomNext"
+      "extraConfig": "",
+      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sweet",
+      "branch": "susfs-159"
     },
     "use_dtb": false,
     "use_python2": false,
