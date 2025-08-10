@@ -388,7 +388,7 @@ jobs:
             cd out_kernel
 
             echo "[Rainy's Image.gz-dtb extractor] Getting DTB offset from Image.gz-dtb..."
-            OFFSET=$(binwalk "Image.gz-dtb" | grep "Flattened device tree" | awk '{print $1}')
+            OFFSET=$(binwalk "Image.gz-dtb" | grep "Flattened device tree" | awk '{print $1; exit}')
             if [ -z "$OFFSET" ]; then
               echo "[Rainy's Image.gz-dtb extractor] Could not find DTB in Image.gz-dtb"
               exit 1
