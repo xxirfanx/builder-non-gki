@@ -65,7 +65,7 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "main"
+      "branch": "master"
     }
   }
 ]
