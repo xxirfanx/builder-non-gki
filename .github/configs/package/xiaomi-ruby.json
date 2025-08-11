@@ -216,7 +216,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": true,
+    "use_dtb": false,
     "use_python2": false,
     "kp": {
       "use": false,
