@@ -232,7 +232,7 @@
     },
     "toolchains": [
       {
-        "repo": "https://github.com/ZyCromerZ/Clang.git",
+        "url": "https://github.com/ZyCromerZ/Clang/releases/download/22.0.0git-20250805-release/Clang-22.0.0git-20250805.tar.gz",
         "branch": "22.0.0git-20250805",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
