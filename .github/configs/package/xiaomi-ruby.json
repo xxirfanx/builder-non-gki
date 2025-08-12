@@ -35,9 +35,11 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2",
+      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
+      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz",
       "externalCommand": {
+        "KBUILD_LDFLAGS": "-fuse-ld=lld",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
@@ -104,9 +106,11 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2",
+      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
+      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz",
       "externalCommand": {
+        "KBUILD_LDFLAGS": "-fuse-ld=lld",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
@@ -173,9 +177,11 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2",
+      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
+      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz",
       "externalCommand": {
+        "KBUILD_LDFLAGS": "-fuse-ld=lld",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
@@ -242,9 +248,11 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2",
+      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
+      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz",
       "externalCommand": {
+        "KBUILD_LDFLAGS": "-fuse-ld=lld",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",

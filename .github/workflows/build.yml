@@ -297,6 +297,7 @@ jobs:
           ARCH=$(echo $params | jq -r ".ARCH")
           CC=$(echo $params | jq -r ".CC")
           KCFLAGS="$(echo $params | jq -r '.KCFLAGS')"
+          KAFLAGS="$(echo $params | jq -r '.KAFLAGS')"
           args="-j${{ env.THREAD }}"
           if [ -n "${{ env.OUT_DIR }}" ]; then
             mkdir -p ${{ env.OUT_DIR }} && args="$args O=${{ env.OUT_DIR }}"
@@ -306,6 +307,9 @@ jobs:
           fi
           if [ -n "$KCFLAGS" ]; then
             args="$args KCFLAGS=\"$KCFLAGS\""
+          fi
+          if [ -n "$KAFLAGS" ]; then
+            args="$args KAFLAGS=\"$KAFLAGS\""
           fi
           if [ -n "$CC" ]; then
             if [[ "$CC" == *"/"* ]]; then
