@@ -25,7 +25,7 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r563880.git",
+        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
@@ -38,6 +38,7 @@
       "KCFLAGS": "-O2",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
+        "VDSOCC": "clang-AOSP/bin/clang",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
@@ -94,7 +95,7 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r563880.git",
+        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
@@ -107,6 +108,7 @@
       "KCFLAGS": "-O2",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
+        "VDSOCC": "clang-AOSP/bin/clang",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
