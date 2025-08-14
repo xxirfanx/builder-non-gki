@@ -38,7 +38,6 @@
       "KCFLAGS": "-O2",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
-        "VDSOCC": "clang-AOSP/bin/clang",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
@@ -108,7 +107,6 @@
       "KCFLAGS": "-O2",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
-        "VDSOCC": "clang-AOSP/bin/clang",
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
         "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
