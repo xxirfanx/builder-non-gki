@@ -296,8 +296,8 @@ jobs:
           echo "PATH Variable: $PATH"
           ARCH=$(echo $params | jq -r ".ARCH")
           CC=$(echo $params | jq -r ".CC")
-          KCFLAGS="$(echo $params | jq -r '.KCFLAGS')"
-          KAFLAGS="$(echo $params | jq -r '.KAFLAGS')"
+          KCFLAGS="$(echo $params | jq -r '.KCFLAGS' // empty)"
+          KAFLAGS="$(echo $params | jq -r '.KAFLAGS' // empty)"
           args="-j${{ env.THREAD }}"
           if [ -n "${{ env.OUT_DIR }}" ]; then
             mkdir -p ${{ env.OUT_DIR }} && args="$args O=${{ env.OUT_DIR }}"

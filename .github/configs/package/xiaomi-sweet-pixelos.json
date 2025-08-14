@@ -25,8 +25,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
-        "branch": "14.0",
+        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
+        "branch": "master",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
       }
@@ -44,17 +44,7 @@
         "CROSS_COMPILE_ARM32": "clang-AOSP/bin/arm-linux-gnueabi-",
         "LD": "clang-AOSP/bin/ld.lld",
         "LLVM": "1",
-        "LLVM_IAS": "1",
-        "AR": "clang-AOSP/bin/llvm-ar",
-        "NM": "clang-AOSP/bin/llvm-nm",
-        "OBJCOPY": "clang-AOSP/bin/llvm-objcopy",
-        "OBJDUMP": "clang-AOSP/bin/llvm-objdump",
-        "READELF": "clang-AOSP/bin/llvm-readelf",
-        "OBJSIZE": "clang-AOSP/bin/llvm-size",
-        "STRIP": "clang-AOSP/bin/llvm-strip",
-        "LDGOLD": "clang-AOSP/bin/aarch64-linux-gnu-ld.gold",
-        "LLVM_AR": "clang-AOSP/bin/llvm-ar",
-        "LLVM_DIS": "clang-AOSP/bin/llvm-dis"
+        "LLVM_IAS": "1"
       }
     },
     "AnyKernel3": {
@@ -94,8 +84,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
-        "branch": "14.0",
+        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
+        "branch": "master",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
       }
