@@ -6,8 +6,8 @@
       "name": "sukisu-susfs-159",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sweet",
-      "branch": "susfs-159"
+      "repo": "https://github.com/kernel-build-from-rainyland/pixelos_kernel_xiaomi_sm6150",
+      "branch": "susfs"
     },
     "use_dtb": false,
     "use_python2": false,
@@ -25,8 +25,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r563880.git",
-        "branch": "main",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
       }
@@ -75,8 +75,8 @@
       "name": "ksun-susfs-159",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_sweet",
-      "branch": "susfs-159"
+      "repo": "https://github.com/kernel-build-from-rainyland/pixelos_kernel_xiaomi_sm6150",
+      "branch": "susfs"
     },
     "use_dtb": false,
     "use_python2": false,
@@ -94,8 +94,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r563880.git",
-        "branch": "main",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["./bin"]
       }
