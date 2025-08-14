@@ -9,7 +9,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "main"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
@@ -37,7 +37,7 @@
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "build_out": "Image.gz",
+      "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
@@ -79,7 +79,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
@@ -107,7 +107,7 @@
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "build_out": "Image.gz",
+      "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
@@ -149,7 +149,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": true,
@@ -177,7 +177,7 @@
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "build_out": "Image.gz",
+      "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
@@ -219,7 +219,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "susfs-159"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": false,
@@ -247,7 +247,7 @@
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "build_out": "Image.gz",
+      "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
