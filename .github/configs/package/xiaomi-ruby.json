@@ -35,8 +35,6 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -175,8 +173,6 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -245,8 +241,6 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -315,8 +309,6 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
