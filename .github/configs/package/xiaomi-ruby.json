@@ -6,7 +6,7 @@
       "name": "vanilla",
       "defconfig": "ruby_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
+      "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "main"
     },
     "use_dtb": true,
@@ -75,9 +75,9 @@
       "vendor": "xiaomi",
       "name": "ksun-susfs-159",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "",
-      "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
-      "branch": "susfs-159"
+      "extraConfig": "kernelsu.config",
+      "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
+      "branch": "main"
     },
     "use_dtb": true,
     "use_python2": false,
@@ -145,9 +145,9 @@
       "vendor": "xiaomi",
       "name": "sukisu-susfs-159",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "",
-      "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
-      "branch": "susfs-159"
+      "extraConfig": "kernelsu.config",
+      "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
+      "branch": "main"
     },
     "use_dtb": true,
     "use_python2": false,
@@ -158,76 +158,6 @@
     "kernelsu": {
       "enable": true,
       "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-main",
-      "setupName": "KernelSU",
-      "needPatch": false,
-      "susfsLink": ""
-    },
-    "toolchains": [
-      {
-        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
-        "branch": "14.0",
-        "name": "clang-AOSP",
-        "binPath": ["./bin"]
-      }
-    ],
-    "ccache": true,
-    "params": {
-      "ARCH": "arm64",
-      "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2 -mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "KAFLAGS": "-mcpu=cortex-a78 -march=armv8.2-a+crypto+crc",
-      "build_out": "Image.gz-dtb",
-      "externalCommand": {
-        "KBUILD_BUILD_HOST": "perfc.org",
-        "KBUILD_BUILD_USER": "rainyxeon",
-        "CROSS_COMPILE": "clang-AOSP/bin/aarch64-linux-gnu-",
-        "CROSS_COMPILE_ARM32": "clang-AOSP/bin/arm-linux-gnueabi-",
-        "LD": "clang-AOSP/bin/ld.lld",
-        "LLVM": "1",
-        "LLVM_IAS": "1",
-        "AR": "clang-AOSP/bin/llvm-ar",
-        "NM": "clang-AOSP/bin/llvm-nm",
-        "OBJCOPY": "clang-AOSP/bin/llvm-objcopy",
-        "OBJDUMP": "clang-AOSP/bin/llvm-objdump",
-        "READELF": "clang-AOSP/bin/llvm-readelf",
-        "OBJSIZE": "clang-AOSP/bin/llvm-size",
-        "STRIP": "clang-AOSP/bin/llvm-strip",
-        "LDGOLD": "clang-AOSP/bin/aarch64-linux-gnu-ld.gold",
-        "LLVM_AR": "clang-AOSP/bin/llvm-ar",
-        "LLVM_DIS": "clang-AOSP/bin/llvm-dis"
-      }
-    },
-    "image": {
-      "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img"
-    },
-    "AnyKernel3": {
-      "use": true,
-      "release": true,
-      "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby"
-    }
-  },
-  {
-    "kernelSource": {
-      "device": "ruby",
-      "vendor": "xiaomi",
-      "name": "rksu-susfs-159",
-      "defconfig": "ruby_defconfig",
-      "extraConfig": "",
-      "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
-      "branch": "susfs-159"
-    },
-    "use_dtb": true,
-    "use_python2": false,
-    "kp": {
-      "use": false,
-      "kpimg_link": ""
-    },
-    "kernelsu": {
-      "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/rsuntk/KernelSU/main/kernel/setup.sh",
       "setupArg": "susfs-main",
       "setupName": "KernelSU",
       "needPatch": false,
