@@ -3,11 +3,11 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "ben-mainstream-15",
+      "name": "aeron-mainstream",
       "defconfig": "ruby_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/xiaomi-mediatek-devs/android_kernel_xiaomi_mt6877",
-      "branch": "fifteen"
+      "repo": "https://github.com/Aeron-Aeron/kernel_xiaomi_mt6877",
+      "branch": "lineage-22.0"
     },
     "use_dtb": true,
     "use_python2": false,
@@ -25,61 +25,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
-        "branch": "master",
-        "name": "clang-AOSP",
-        "binPath": ["/bin"]
-      }
-    ],
-    "ccache": false,
-    "params": {
-      "ARCH": "arm64",
-      "build_out": "Image.gz-dtb",
-      "externalCommand": {
-        "KBUILD_BUILD_HOST": "perfc.org",
-        "KBUILD_BUILD_USER": "rainyxeon",
-        "LLVM": "1"
-      }
-    },
-    "image": {
-      "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img"
-    },
-    "AnyKernel3": {
-      "use": true,
-      "release": true,
-      "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby"
-    }
-  },
-  {
-    "kernelSource": {
-      "device": "ruby",
-      "vendor": "xiaomi",
-      "name": "ben-mainstream",
-      "defconfig": "ruby_defconfig",
-      "extraConfig": "",
-      "repo": "https://github.com/xiaomi-mediatek-devs/android_kernel_xiaomi_mt6877",
-      "branch": "lineage-21"
-    },
-    "use_dtb": true,
-    "use_python2": false,
-    "kp": {
-      "use": false,
-      "kpimg_link": ""
-    },
-    "kernelsu": {
-      "enable": false,
-      "setupLink": "",
-      "setupArg": "",
-      "setupName": "",
-      "needPatch": false,
-      "susfsLink": ""
-    },
-    "toolchains": [
-      {
-        "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
@@ -131,8 +78,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
@@ -184,8 +131,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
@@ -237,8 +184,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
