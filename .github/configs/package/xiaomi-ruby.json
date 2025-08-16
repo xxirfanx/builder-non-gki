@@ -28,13 +28,12 @@
         "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
         "branch": "master",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": false,
     "params": {
       "ARCH": "arm64",
-      "CC": "clang-AOSP/bin/clang",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -82,13 +81,12 @@
         "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
         "branch": "master",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": false,
     "params": {
       "ARCH": "arm64",
-      "CC": "clang-AOSP/bin/clang",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -136,13 +134,12 @@
         "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
         "branch": "master",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": false,
     "params": {
       "ARCH": "arm64",
-      "CC": "clang-AOSP/bin/clang",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -190,13 +187,12 @@
         "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
         "branch": "master",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": false,
     "params": {
       "ARCH": "arm64",
-      "CC": "clang-AOSP/bin/clang",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -244,7 +240,7 @@
         "repo": "https://gitlab.com/RainyXeon/clang-r487747c.git",
         "branch": "master",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": false,
