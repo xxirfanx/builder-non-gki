@@ -6,7 +6,7 @@
       "name": "vanilla",
       "defconfig": "m2note_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/doktertekno/android_kernel_meizu_m2note",
+      "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_meizu_m2note",
       "branch": "ng-7.1.2"
     },
     "use_dtb": false,
