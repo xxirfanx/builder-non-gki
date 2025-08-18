@@ -297,7 +297,7 @@ jobs:
           toolchain_name=$(echo $toolchains | jq -r ".[0].name")
           export PATH=${{ env.WORKSPACE }}/$toolchain_name:$PATH
           ARCH=$(echo $params | jq -r ".ARCH")
-          CC=$(echo $params | jq -r ".CC")
+          CC=$(echo "$params" | jq -r '(.CC // "")')
           KCFLAGS=$(echo "$params" | jq -r '(.KCFLAGS // "")')
           KAFLAGS=$(echo "$params" | jq -r '(.KAFLAGS // "")')
           args="-j${{ env.THREAD }}"

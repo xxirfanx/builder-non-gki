@@ -34,7 +34,6 @@
     "params": {
       "ARCH": "arm64",
       "build_out": "Image.gz-dtb",
-      "CC": "gcc",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
