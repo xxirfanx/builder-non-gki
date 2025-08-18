@@ -4,12 +4,12 @@
       "device": "chime",
       "vendor": "xiaomi",
       "name": "sukisu",
-      "defconfig": "vendor/sdm660-perf_defconfig",
+      "defconfig": "vendor/chime_defconfig",
       "extraConfig": "vendor/xiaomi/citrus.config",
-      "repo": "https://github.com/kernel-build-from-rainyland/valeryn_xiaomi_sm6115",
-      "branch": "android13"
+      "repo": "https://github.com/RainyXeon/kernel-xiaomi-electro",
+      "branch": "14"
     },
-    "use_dtb": true,
+    "use_dtb": false,
     "use_python2": false,
     "kp": {
       "use": true,
