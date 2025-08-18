@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_meizu_m2note",
       "branch": "ng-7.1.2"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": true,
     "kp": {
       "use": false,
@@ -30,7 +30,7 @@
         "binPath": ["/bin"]
       }
     ],
-    "ccache": true,
+    "ccache": false,
     "params": {
       "ARCH": "arm64",
       "build_out": "Image.gz-dtb",
@@ -42,8 +42,8 @@
       }
     },
     "image": {
-      "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/meizu-m2note-original-boot.img"
+      "use": false,
+      "imageUrl": ""
     },
     "AnyKernel3": {
       "use": false,
