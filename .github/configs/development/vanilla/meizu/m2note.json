@@ -37,7 +37,7 @@
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
-        "CROSS_COMPILE": "gcc-AOSP/bin/aarch64-linux-gnu-"
+        "CROSS_COMPILE": "gcc-AOSP/bin/aarch64-linux-android-"
       }
     },
     "image": {
