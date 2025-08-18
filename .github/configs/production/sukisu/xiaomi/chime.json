@@ -9,7 +9,7 @@
       "repo": "https://github.com/RainyXeon/kernel-xiaomi-electro",
       "branch": "14"
     },
-    "use_dtb": false,
+    "use_dtb": true,
     "use_python2": false,
     "kp": {
       "use": true,
@@ -36,7 +36,7 @@
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2",
-      "build_out": "Image.gz",
+      "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",
