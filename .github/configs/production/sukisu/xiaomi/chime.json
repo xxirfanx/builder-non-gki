@@ -5,7 +5,7 @@
       "vendor": "xiaomi",
       "name": "sukisu",
       "defconfig": "vendor/chime_defconfig",
-      "extraConfig": "vendor/xiaomi/citrus.config",
+      "extraConfig": "",
       "repo": "https://github.com/RainyXeon/kernel-xiaomi-electro",
       "branch": "14"
     },
