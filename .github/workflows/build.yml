@@ -421,6 +421,9 @@ jobs:
           if [ -f "${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtbo.img" ]; then
             cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtbo.img ./out_kernel/
           fi
+          if [ -f "${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtb.img" ]; then
+            cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtb.img ./out_kernel/
+          fi
           ls -al ./out_kernel/
       - name: "Patch with kernel patch"
         if: ${{ env.useKernelPatch == 'true' }}
