@@ -28,7 +28,7 @@
         "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r530567.tar.gz",
         "branch": "master",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": true,

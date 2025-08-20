@@ -28,7 +28,7 @@
         "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
         "branch": "14.0",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": true,

@@ -28,7 +28,7 @@
         "repo": "https://gitlab.com/sarthakroy2002/android_prebuilts_clang_host_linux-x86_clang-r437112b",
         "branch": "master",
         "name": "clang-AOSP",
-        "binPath": ["./bin"]
+        "binPath": ["/bin"]
       }
     ],
     "ccache": true,
