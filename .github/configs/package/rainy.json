@@ -7,7 +7,7 @@
       "defconfig": "ruby_defconfig",
       "extraConfig": "kernelsu.config",
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
-      "branch": "main"
+      "branch": "dev"
     },
     "use_dtb": true,
     "use_python2": false,
