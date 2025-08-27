@@ -5,7 +5,7 @@
       "vendor": "xiaomi",
       "name": "vanilla",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "",
+      "extraConfig": "features/bbr.config",
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "main"
     },
@@ -74,7 +74,7 @@
       "vendor": "xiaomi",
       "name": "ksun-susfs-159",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "kernelsu.config",
+      "extraConfig": "features/bbr.config features/kernelsu.config",
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "main"
     },
@@ -143,7 +143,7 @@
       "vendor": "xiaomi",
       "name": "sukisu-susfs-159",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "kernelsu.config",
+      "extraConfig": "features/bbr.config features/kernelsu.config",
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "main"
     },
