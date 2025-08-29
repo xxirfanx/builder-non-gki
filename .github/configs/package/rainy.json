@@ -5,7 +5,7 @@
       "vendor": "xiaomi",
       "name": "ksun-susfs-159",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "kernelsu.config",
+      "extraConfig": "features/slmk.config features/bbr.config features/lz4kd.config features/kernelsu.config",
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "dev"
     },
