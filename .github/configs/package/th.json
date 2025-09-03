@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "ksun-susfs-159",
+      "name": "sukisu-susfs-159",
       "defconfig": "ruby_defconfig",
       "extraConfig": "features/lru.config features/noop.config features/bbr.config features/lz4kd.config features/kernelsu.config",
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
@@ -12,14 +12,14 @@
     "use_dtb": true,
     "use_python2": false,
     "kp": {
-      "use": false,
+      "use": true,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next",
-      "setupName": "KernelSU-Next",
+      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
+      "setupArg": "susfs-main",
+      "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
     },

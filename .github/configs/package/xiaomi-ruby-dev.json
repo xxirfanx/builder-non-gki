@@ -58,8 +58,8 @@
       }
     },
     "image": {
-      "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img"
+      "use": false,
+      "imageUrl": ""
     },
     "AnyKernel3": {
       "use": true,
@@ -127,8 +127,8 @@
       }
     },
     "image": {
-      "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img"
+      "use": false,
+      "imageUrl": ""
     },
     "AnyKernel3": {
       "use": true,
@@ -196,8 +196,8 @@
       }
     },
     "image": {
-      "use": true,
-      "imageUrl": "https://github.com/kernel-build-from-rainyland/builder-non-gki/releases/download/cloud/xiaomi-ruby-original-boot.img"
+      "use": false,
+      "imageUrl": ""
     },
     "AnyKernel3": {
       "use": true,
