@@ -402,14 +402,11 @@ jobs:
 
             echo "[Rainy's ${{ env.output_image }} extractor] Found DTB offset at $OFFSET"
 
-            echo "[Rainy's ${{ env.output_image }} extractor] Extracting kernel..."
-            dd if="${{ env.output_image }}" of="Image.gz" bs=1 count="$OFFSET" status=none
-
             echo "[Rainy's ${{ env.output_image }} extractor] Extracting DTB..."
             dd if="${{ env.output_image }}" of="dtb" bs=1 skip="$OFFSET" status=none
 
-            echo "[Rainy's ${{ env.output_image }} extractor] Decompressing kernel gzip to raw Image..."
-            gzip -cd "Image.gz" > "Image"
+            echo "[Rainy's ${{ env.output_image }} extractor] Push raw Image..."
+            cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/Image .
 
             echo "[Rainy's ${{ env.output_image }} extractor] Done"
 
