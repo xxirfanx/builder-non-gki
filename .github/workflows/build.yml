@@ -469,7 +469,6 @@ jobs:
           if [[ "$dtb_required" == true ]]; then
             echo "[Kernel Packer]: Attach dtb to kernel"
             cat "$base" dtb > "$base-dtb"
-            mv "$base-dtb" "${{ env.output_image }}"
             rm -f "$base" dtb
           fi
 
