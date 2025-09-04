@@ -389,7 +389,7 @@ jobs:
         run: |
           mkdir out_kernel
           ls -al ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot
-          if [[ "${{ env.output_image }}" == *"-dtb"* && "${{ env.useKernelPatch }}" == "true" ]]; then
+          if [[ "${{ env.output_image }}" == *"-dtb"* ]]; then
             cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/${{ env.output_image }} ./out_kernel
             cd out_kernel
 
@@ -448,25 +448,32 @@ jobs:
           base="${{ env.output_image }}"
 
           if [[ "$base" == *"-dtb" ]]; then
+            echo "[Kernel Packer]: DTB enabled"
             dtb_required=true
             base="${base%-dtb}"
           else
+            echo "[Kernel Packer]: DTB disabled"
             dtb_required=false
           fi
 
           if [[ "$base" == *.gz ]]; then
+            echo "[Kernel Packer]: Compress Image with gzip"
             gzip -c Image > "$base"
             rm -rf ./Image
           elif [[ "$base" == *.lz4 ]]; then
+            echo "[Kernel Packer]: Compress Image with lz4"
             lz4 -B6 --favor-decSpeed ./Image "$base"
             rm -rf ./Image
           fi
 
           if [[ "$dtb_required" == true ]]; then
+            echo "[Kernel Packer]: Attach dtb to kernel"
             cat "$base" dtb > "$base-dtb"
             mv "$base-dtb" "${{ env.output_image }}"
             rm -f "$base" dtb
           fi
+
+          echo "[Kernel Packer]: Zip the anykernel file"
 
           zip -q -r "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}" *
       - name: "Upload AnyKernel3 image"
