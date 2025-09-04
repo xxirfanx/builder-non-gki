@@ -25,8 +25,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
@@ -94,8 +94,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
@@ -163,8 +163,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r547379.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
