@@ -65,7 +65,7 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby"
+      "branch": "ruby_dev"
     }
   },
   {
@@ -134,7 +134,7 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby"
+      "branch": "ruby_dev"
     }
   },
   {
@@ -203,7 +203,7 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby"
+      "branch": "ruby_dev"
     }
   }
 ]
