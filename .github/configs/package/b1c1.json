@@ -6,7 +6,7 @@
       "name": "ksun-susfs-159",
       "defconfig": "b1c1_defconfig",
       "extraConfig": "vendor/kernelsu.config",
-      "repo": "https://github.com/RainyXeon/kernel_google_b1c1",
+      "repo": "https://github.com/kernel-build-from-rainyland/kernel_google_b1c1",
       "branch": "vic-testing"
     },
     "use_dtb": true,
