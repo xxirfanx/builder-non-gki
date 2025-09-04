@@ -9,7 +9,7 @@
       "repo": "https://github.com/RainyXeon/kernel_xiaomi_ruby",
       "branch": "main"
     },
-    "use_dtb": false,
+    "output_image": "Image",
     "use_python2": false,
     "kp": {
       "use": true,

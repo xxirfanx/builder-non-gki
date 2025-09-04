@@ -9,7 +9,7 @@
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "dev"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": false,
@@ -78,7 +78,7 @@
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "dev"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": false,
@@ -147,7 +147,7 @@
       "repo": "https://github.com/RainyXeon/android_kernel_xiaomi_ruby",
       "branch": "dev"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": true,

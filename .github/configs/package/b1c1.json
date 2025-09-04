@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/kernel_google_b1c1",
       "branch": "vic-testing"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": true,
     "kp": {
       "use": false,
@@ -36,7 +36,7 @@
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
       "KCFLAGS": "-O2",
-      "build_out": "Image.lz4-dtb",
+      "build_out": "",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
         "KBUILD_BUILD_USER": "rainyxeon",

@@ -9,7 +9,7 @@
       "repo": "https://github.com/RainyXeon/kernel-xiaomi-electro",
       "branch": "14"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": true,

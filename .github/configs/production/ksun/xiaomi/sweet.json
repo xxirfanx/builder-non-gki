@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/vantom_next_kernel_xiaomi_sm6150",
       "branch": "VantomNext"
     },
-    "use_dtb": false,
+    "output_image": "Image",
     "use_python2": false,
     "kp": {
       "use": false,

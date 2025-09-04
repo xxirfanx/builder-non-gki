@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_sm6150.git",
       "branch": "bka"
     },
-    "use_dtb": false,
+    "output_image": "Image",
     "use_python2": false,
     "kp": {
       "use": true,
@@ -78,7 +78,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_sm6150.git",
       "branch": "bka"
     },
-    "use_dtb": false,
+    "output_image": "Image",
     "use_python2": false,
     "kp": {
       "use": false,

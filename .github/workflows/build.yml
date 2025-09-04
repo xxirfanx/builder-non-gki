@@ -142,7 +142,7 @@ jobs:
       WORKSPACE: ${{ github.workspace }}
 
       builddate: "${{ needs.Set-repos.outputs.builddate }}"
-      use_dtb: ${{ matrix.repos.use_dtb }}
+      output_image: ${{ matrix.repos.output_image  }}
       use_python2: ${{ matrix.repos.use_python2 }}
 
       KERNEL_NAME: ${{ matrix.repos.kernelSource.name }}
@@ -389,34 +389,34 @@ jobs:
         run: |
           mkdir out_kernel
           ls -al ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot
-          if [[ "${{ env.use_dtb }}" == "true" ]]; then
-            cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/Image.gz-dtb ./out_kernel
+          if [[ "${{ env.output_image }}" == *"-dtb"* && "${{ env.useKernelPatch }}" == "true" ]]; then
+            cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/${{ env.output_image }} ./out_kernel
             cd out_kernel
 
-            echo "[Rainy's Image.gz-dtb extractor] Getting DTB offset from Image.gz-dtb..."
-            OFFSET=$(binwalk "Image.gz-dtb" | grep "Flattened device tree" | awk '{print $1; exit}')
+            echo "[Rainy's ${{ env.output_image }} extractor] Getting DTB offset from ${{ env.output_image }}..."
+            OFFSET=$(binwalk "${{ env.output_image }}" | grep "Flattened device tree" | awk '{print $1; exit}')
             if [ -z "$OFFSET" ]; then
-              echo "[Rainy's Image.gz-dtb extractor] Could not find DTB in Image.gz-dtb"
+              echo "[Rainy's ${{ env.output_image }} extractor] Could not find DTB in ${{ env.output_image }}"
               exit 1
             fi
 
-            echo "[Rainy's Image.gz-dtb extractor] Found DTB offset at $OFFSET"
+            echo "[Rainy's ${{ env.output_image }} extractor] Found DTB offset at $OFFSET"
 
-            echo "[Rainy's Image.gz-dtb extractor] Extracting kernel (gzip part)..."
-            dd if="Image.gz-dtb" of="Image.gz" bs=1 count="$OFFSET" status=none
+            echo "[Rainy's ${{ env.output_image }} extractor] Extracting kernel..."
+            dd if="${{ env.output_image }}" of="Image.gz" bs=1 count="$OFFSET" status=none
 
-            echo "[Rainy's Image.gz-dtb extractor] Extracting DTB..."
-            dd if="Image.gz-dtb" of="dtb" bs=1 skip="$OFFSET" status=none
+            echo "[Rainy's ${{ env.output_image }} extractor] Extracting DTB..."
+            dd if="${{ env.output_image }}" of="dtb" bs=1 skip="$OFFSET" status=none
 
-            echo "[Rainy's Image.gz-dtb extractor] Decompressing kernel gzip to raw Image..."
+            echo "[Rainy's ${{ env.output_image }} extractor] Decompressing kernel gzip to raw Image..."
             gzip -cd "Image.gz" > "Image"
 
-            echo "[Rainy's Image.gz-dtb extractor] Done"
+            echo "[Rainy's ${{ env.output_image }} extractor] Done"
 
-            rm -rf Image.gz Image.gz-dtb
+            rm -rf Image.gz ${{ env.output_image }}
             cd ..
           else
-            cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/Image ./out_kernel/
+            cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/${{ env.output_image }} ./out_kernel/
           fi
           if [ -f "${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtbo.img" ]; then
             cp -f ${{ env.OUT_DIR }}/arch/${{ env.arch }}/boot/dtbo.img ./out_kernel/
@@ -444,15 +444,40 @@ jobs:
           ls -al
           cp -f -r ./out_kernel/. ./AnyKernel3/
           cd AnyKernel3/
-          if [[ "${{ env.use_dtb }}" != "true" ]]; then
-            mv ./Image ./PreImage
-            gzip -c ./PreImage > ./Image.gz
-            rm -rf ./PreImage
-          else
-            gzip -c Image > Image.gz
-            cat Image.gz dtb > Image.gz-dtb
-            rm -rf Image Image.gz dtb
+
+          if [[ "${{ env.useKernelPatch }}" == "true" ]]; then
+            base="${{ env.output_image }}"
+
+            if [[ "$base" == *"-dtb" ]]; then
+              dtb_required=true
+              base="${base%-dtb}"
+            else
+              dtb_required=false
+            fi
+
+            # Detect compression type
+            if [[ "$base" == *.gz ]]; then
+              trimmed="${base%.gz}"   # remove .gz
+              gzip -c Image > "$base"
+            elif [[ "$base" == *.lz4 ]]; then
+              trimmed="${base%.lz4}"  # remove .lz4
+              lz4 -B6 --favor-decSpeed ./Image "$base"
+            else
+              # fallback: just copy Image if no extension
+              trimmed="$base"
+              cp Image "$base"
+            fi
+
+            rm -rf ./Image
+
+            # If dtb required, append it
+            if [[ "$dtb_required" == true ]]; then
+              cat "$base" dtb > "${base}-dtb"
+              mv "${base}-dtb" "${{ env.output_image }}"
+              rm -f "$base" dtb
+            fi
           fi
+
           zip -q -r "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}" *
       - name: "Upload AnyKernel3 image"
         uses: actions/upload-artifact@v4
@@ -471,10 +496,6 @@ jobs:
           ../magiskboot_x86 unpack original-boot.img
           rm -rf ./kernel
           cp ../out_kernel/Image ./kernel
-          if [[ "${{ env.use_dtb }}" == "true" ]]; then
-            rm -rf ./dtb
-            cp ../out_kernel/dtb ./dtb
-          fi
           ../magiskboot_x86 repack original-boot.img
           cd ..
           cp -f ./wrap_kernel/new-boot.img ./out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img

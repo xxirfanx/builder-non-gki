@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/pixelos_kernel_xiaomi_sm6150",
       "branch": "susfs"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": true,
@@ -68,7 +68,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/pixelos_kernel_xiaomi_sm6150",
       "branch": "susfs"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": false,

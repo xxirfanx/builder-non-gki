@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/niigo_kernel_xiaomi_blossom",
       "branch": "yoka-ksu"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": false,

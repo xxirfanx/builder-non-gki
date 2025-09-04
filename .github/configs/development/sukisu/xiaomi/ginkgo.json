@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
       "branch": "revert-16-7"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": true,
     "kp": {
       "use": true,

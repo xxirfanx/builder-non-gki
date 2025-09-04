@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/kernel_realme_RMX2020",
       "branch": "susfs-158"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": false,
     "kp": {
       "use": false,

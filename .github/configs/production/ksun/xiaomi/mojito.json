@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/kernel_xiaomi_mojito",
       "branch": "ksu"
     },
-    "use_dtb": false,
+    "output_image": "Image",
     "use_python2": false,
     "kp": {
       "use": false,

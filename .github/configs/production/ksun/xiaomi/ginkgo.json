@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
       "branch": "revert-29-4"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": true,
     "kp": {
       "use": false,
@@ -86,7 +86,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
       "branch": "revert-29-4-nondynamic"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": true,
     "kp": {
       "use": false,
@@ -163,7 +163,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/android_kernel_xiaomi_ginkgo",
       "branch": "revert-29-4-nondynamic"
     },
-    "use_dtb": true,
+    "output_image": "Image.gz-dtb",
     "use_python2": true,
     "kp": {
       "use": false,
