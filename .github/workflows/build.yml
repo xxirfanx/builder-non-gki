@@ -10,7 +10,7 @@ on:
         description: "Choose a config type"
         required: true
         type: choice
-        default: "production"
+        default: "package"
         options:
           - production
           - development
