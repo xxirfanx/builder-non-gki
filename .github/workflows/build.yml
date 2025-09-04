@@ -177,7 +177,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             build-essential bc gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi \
-            libssl-dev libfl-dev aria2 curl \
+            libssl-dev libfl-dev aria2 curl device-tree-compiler \
             git ftp lftp libarchive-tools ccache python3 python3-pip \
             zip unzip tar gzip bzip2 rar unrar binwalk libelf-dev \
             checkinstall libncursesw5-dev libsqlite3-dev tk-dev \
