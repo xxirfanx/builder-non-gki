@@ -9,7 +9,7 @@
       "repo": "https://github.com/kernel-build-from-rainyland/kernel_google_b1c1",
       "branch": "vic-testing"
     },
-    "output_image": "Image.gz-dtb",
+    "output_image": "Image.lz4-dtb",
     "use_python2": true,
     "kp": {
       "use": false,
