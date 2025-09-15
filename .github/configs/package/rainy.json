@@ -5,7 +5,7 @@
       "vendor": "xiaomi",
       "name": "ksun",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "features/bbr.config features/noop.config features/lru.config features/lz4kd.config features/kernelsu.config",
+      "extraConfig": "features/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
       "branch": "dev"
     },
