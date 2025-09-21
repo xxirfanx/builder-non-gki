@@ -5,9 +5,9 @@
       "vendor": "xiaomi",
       "name": "ksun",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "features/kernelsu.config",
+      "extraConfig": "features/bbr.config features/noop.config features/lru.config features/lz4kd.config features/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
-      "branch": "dev"
+      "branch": "main"
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
@@ -65,7 +65,7 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby_dev"
+      "branch": "ruby"
     }
   }
 ]
