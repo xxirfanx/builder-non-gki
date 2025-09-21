@@ -5,7 +5,7 @@
       "vendor": "xiaomi",
       "name": "vanilla",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "features/bbr.config features/noop.config features/lru.config features/lz4kd.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
       "branch": "main"
     },
@@ -74,7 +74,7 @@
       "vendor": "xiaomi",
       "name": "ksun",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "features/bbr.config features/noop.config features/lru.config features/lz4kd.config features/kernelsu.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
       "branch": "main"
     },
@@ -143,7 +143,7 @@
       "vendor": "xiaomi",
       "name": "sukisu",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "features/bbr.config features/noop.config features/lru.config features/lz4kd.config features/kernelsu.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
       "branch": "main"
     },
@@ -212,7 +212,7 @@
       "vendor": "xiaomi",
       "name": "rksu",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "features/bbr.config features/noop.config features/lru.config features/lz4kd.config features/kernelsu.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
       "branch": "main"
     },
@@ -281,7 +281,7 @@
       "vendor": "xiaomi",
       "name": "wksu",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "features/bbr.config features/noop.config features/lru.config features/lz4kd.config features/kernelsu.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
       "branch": "main"
     },
