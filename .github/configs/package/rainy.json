@@ -7,7 +7,7 @@
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
-      "branch": "ben-mainstream"
+      "branch": "ben-upstream"
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
