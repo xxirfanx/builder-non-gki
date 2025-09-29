@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "vanilla",
+      "name": "moonwake-vanilla",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -72,7 +72,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "ksun",
+      "name": "moonwake-ksun",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -141,7 +141,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "sukisu",
+      "name": "moonwake-sukisu",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -210,7 +210,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "rksu",
+      "name": "moonwake-rksu",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -279,7 +279,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "wksu",
+      "name": "moonwake-wksu",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",

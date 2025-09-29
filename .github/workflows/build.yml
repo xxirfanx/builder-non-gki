@@ -73,16 +73,16 @@ jobs:
 
           if [ -n "$CONFIG_FILE" ]; then
             # User provided config file, check if exists
-            if [ -f "./.github/configs/$CONFIG_TYPE/$CONFIG_FILE" ]; then
-              echo "Using specified config file: ./.github/configs/$CONFIG_TYPE/$CONFIG_FILE"
+            if [ -f "./configs/$CONFIG_TYPE/$CONFIG_FILE" ]; then
+              echo "Using specified config file: ./configs/$CONFIG_TYPE/$CONFIG_FILE"
               echo "repos<<EOF" >> $GITHUB_OUTPUT
-              CONFIG_PATH="./.github/configs/$CONFIG_TYPE/$CONFIG_FILE"
+              CONFIG_PATH="./configs/$CONFIG_TYPE/$CONFIG_FILE"
               # Strip BOM
               sed -i '1s/^\xEF\xBB\xBF//' "$CONFIG_PATH"
               jq -s '[.[][]]' "$CONFIG_PATH" >> $GITHUB_OUTPUT
               echo "EOF" >> $GITHUB_OUTPUT
             else
-              echo "ERROR: Specified config file './.github/configs/$CONFIG_TYPE/$CONFIG_FILE' does not exist!" >&2
+              echo "ERROR: Specified config file './configs/$CONFIG_TYPE/$CONFIG_FILE' does not exist!" >&2
               exit 1
             fi
           else
@@ -90,13 +90,13 @@ jobs:
             echo "No config_file input provided."
 
             if [[ "$CONFIG_MODE" != "everything" ]]; then
-              echo "Using only files from '$CONFIG_MODE' in .github/configs/$CONFIG_TYPE/"
-              find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json"
-              FILES=$(find ".github/configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json")
+              echo "Using only files from '$CONFIG_MODE' in configs/$CONFIG_TYPE/"
+              find "configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json"
+              FILES=$(find "configs/$CONFIG_TYPE/${CONFIG_MODE}" -type f -name "*.json")
             else
-              echo "Using all JSON files in .github/configs/$CONFIG_TYPE/"
-              find ".github/configs/$CONFIG_TYPE" -type f -name "*.json"
-              FILES=$(find ".github/configs/$CONFIG_TYPE" -type f -name '*.json')
+              echo "Using all JSON files in configs/$CONFIG_TYPE/"
+              find "configs/$CONFIG_TYPE" -type f -name "*.json"
+              FILES=$(find "configs/$CONFIG_TYPE" -type f -name '*.json')
             fi
 
             if [ -z "$FILES" ]; then
@@ -471,13 +471,13 @@ jobs:
 
           echo "[Kernel Packer]: Zip the anykernel file"
 
-          zip -q -r "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}" *
+          zip -q -r "${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}" *
       - name: "Upload AnyKernel3 image"
         uses: actions/upload-artifact@v4
         if: ${{ env.useAnykernel == 'true' }}
         with:
-          name: "anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}"
-          path: ./AnyKernel3/anykernel-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.zip
+          name: "${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}"
+          path: ./AnyKernel3/${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.zip
       - name: "Pack kernel image"
         if: ${{ env.useImage == 'true' }}
         run: |
@@ -491,13 +491,13 @@ jobs:
           cp ../out_kernel/Image ./kernel
           ../magiskboot_x86 repack original-boot.img
           cd ..
-          cp -f ./wrap_kernel/new-boot.img ./out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img
+          cp -f ./wrap_kernel/new-boot.img ./out_kernel/${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img
       - name: "Upload image"
         if: ${{ env.useImage == 'true' }}
         uses: actions/upload-artifact@v4
         with:
-          name: "image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}"
-          path: "out_kernel/image-${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img"
+          name: "${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}"
+          path: "out_kernel/${{ env.KERNEL_NAME }}-${{ env.KERNEL_DEVICE_VENDOR }}-${{ env.KERNEL_DEVICE }}-${{ env.builddate }}-${{ github.run_number }}.img"
 
   publish:
     needs: [Set-repos, Build-Kernel]
