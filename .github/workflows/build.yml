@@ -139,6 +139,7 @@ jobs:
       matrix:
         repos: ${{ fromJSON(needs.Set-repos.outputs.repos) }}
     env:
+      RUN_NUMBER: ${{ github.run_number }}
       WORKSPACE: ${{ github.workspace }}
 
       builddate: "${{ needs.Set-repos.outputs.builddate }}"
