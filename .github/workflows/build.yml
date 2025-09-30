@@ -170,7 +170,7 @@ jobs:
       ogImageLink: ${{ matrix.repos.image.imageUrl }}
 
       ccache: ${{ matrix.repos.ccache }}
-      release: ${{ matrix.repos.AnyKernel3.release }}
+      additional_script_link: ${{ matrix.repos.additional_script_link }}
     steps:
       - name: "Install prerequisites"
         run: |
@@ -357,6 +357,11 @@ jobs:
             cd scripts
             sed -i 's/ -dirty//g' setlocalversion
           fi
+      - name: "Run Additional Script"
+        working-directory: ${{ env.KERNEL_NAME }}
+        if: ${{ env.additional_script_link != 'disabled' }}
+        run: |
+          curl -LSs "${{ env.additional_script_link }}" | bash
       - name: "Make defconfig"
         working-directory: ${{ env.KERNEL_NAME }}
         env:

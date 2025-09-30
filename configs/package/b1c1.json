@@ -11,6 +11,8 @@
     },
     "output_image": "Image.lz4-dtb",
     "use_python2": true,
+    "additional_script_link": "disabled",
+    "additional_script_link": "disabled",
     "kp": {
       "use": false,
       "kpimg_link": ""
