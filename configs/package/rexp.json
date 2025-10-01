@@ -11,7 +11,7 @@
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
-    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/ruby-exp-version.sh",
     "kp": {
       "use": false,
       "kpimg_link": ""
@@ -81,7 +81,7 @@
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
-    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/ruby-exp-version.sh",
     "kp": {
       "use": false,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
@@ -151,7 +151,7 @@
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
-    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/ruby-exp-version.sh",
     "kp": {
       "use": true,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
@@ -221,7 +221,7 @@
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
-    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/ruby-exp-version.sh",
     "kp": {
       "use": false,
       "kpimg_link": ""
@@ -291,7 +291,7 @@
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
-    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/ruby-exp-version.sh",
     "kp": {
       "use": false,
       "kpimg_link": ""
