@@ -12,6 +12,7 @@
     "output_image": "Image.gz-dtb",
     "use_python2": false,
     "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/ruby-exp-version.sh",
+    "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
       "kpimg_link": ""

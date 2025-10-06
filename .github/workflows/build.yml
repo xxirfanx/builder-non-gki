@@ -172,6 +172,7 @@ jobs:
 
       ccache: ${{ matrix.repos.ccache }}
       additional_script_link: ${{ matrix.repos.additional_script_link }}
+      additional_post_script_link: ${{ matrix.repos.additional_script_post_link }}
     steps:
       - name: "Install prerequisites"
         run: |
@@ -385,6 +386,11 @@ jobs:
         run: |
           echo "PATH Variable: $PATH"
           make ${{ env.args }} ${{ env.build_out }}
+      - name: "Run Additional Script"
+        working-directory: ${{ env.KERNEL_NAME }}
+        if: ${{ env.additional_post_script_link != 'disabled' }}
+        run: |
+          curl -LSs "${{ env.additional_post_script_link }}" | bash
       - name: "Check ccache usage"
         if: ${{ env.ccache == 'true' }}
         run: |

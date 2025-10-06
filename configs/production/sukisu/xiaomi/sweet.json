@@ -12,6 +12,7 @@
     "output_image": "Image",
     "use_python2": false,
     "additional_script_link": "disabled",
+    "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
       "kpimg_link": ""

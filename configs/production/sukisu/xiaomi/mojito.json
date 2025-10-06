@@ -12,6 +12,7 @@
     "output_image": "Image",
     "use_python2": false,
     "additional_script_link": "disabled",
+    "additional_post_script_link": "disabled",
     "kp": {
       "use": true,
       "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
