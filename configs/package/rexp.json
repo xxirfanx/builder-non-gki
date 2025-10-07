@@ -146,7 +146,7 @@
       "vendor": "xiaomi",
       "name": "moonwake-experimental-sukisu",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "vendor/debug.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config kernelpatch.config",
+      "extraConfig": "vendor/debug.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config vendor/kernelpatch.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
       "branch": "experimental"
     },
