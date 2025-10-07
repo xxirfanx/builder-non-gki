@@ -3,11 +3,11 @@
     "kernelSource": {
       "device": "sweet",
       "vendor": "xiaomi",
-      "name": "vantomnext-experimental-bbr3-ksun",
+      "name": "vantomnext-experimental-ksun",
       "defconfig": "sweet_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/kernel-build-from-rainyland/vantom_next_kernel_xiaomi_sm6150",
-      "branch": "add/bbr3"
+      "branch": "VantomNext"
     },
     "output_image": "Image",
     "use_python2": false,
