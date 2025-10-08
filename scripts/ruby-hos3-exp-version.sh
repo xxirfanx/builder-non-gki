@@ -1,5 +1,3 @@
-echo "Remove Official Local Version String"
-rm "localversion-moon"
 echo "Add experimental version string"
 echo "-EXPERIMENTAL-HyperMoon" > localversion-00-experimental
 echo "Add commit version string"
