@@ -14,4 +14,4 @@ CONFIG_DEVFREQ_THERMAL=y
 CONFIG_GENERIC_ADC_THERMAL=y
 EOF
 
-make $args vendor/sps.config
+make ARCH=arm64 O=$OUT_DIR vendor/sps.config
