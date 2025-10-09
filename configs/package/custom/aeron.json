@@ -3,19 +3,19 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "moonwake-rainy-ksun",
+      "name": "moonwake-aeron",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config",
+      "extraConfig": "vendor/kernelsu.config vendor/susfs.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
-      "branch": "experimental"
+      "branch": "main"
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
-    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/ruby-exp-version.sh",
+    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/aeron.sh",
     "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
-      "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
+      "kpimg_link": ""
     },
     "kernelsu": {
       "enable": true,
@@ -37,7 +37,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O2",
+      "KCFLAGS": "-O2 -march=armv8.2-a+crypto+fp16+dotprod -mcpu=cortex-a78 -mtune=cortex-a78",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "personal.deepinrain",
@@ -67,7 +67,7 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "ruby_dev"
+      "branch": "ruby_custom"
     }
   }
 ]

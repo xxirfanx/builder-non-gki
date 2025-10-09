@@ -373,6 +373,7 @@ jobs:
           if [[ -n "${{ env.EXTRA_CONFIG_NAME }}" ]]; then
             make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
             for extra_config_config_file in ${{ env.EXTRA_CONFIG_NAME }}; do
+              echo "-- Now running append fregmented file: $extra_config_config_file"
               make ${{ env.args }} $extra_config_config_file
             done
           else
