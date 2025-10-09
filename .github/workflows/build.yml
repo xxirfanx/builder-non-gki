@@ -336,6 +336,7 @@ jobs:
           echo "$args"
           echo "ARCH=$ARCH" >> $GITHUB_OUTPUT
           echo "args=$args" >> $GITHUB_OUTPUT
+          export args=$args
       - name: "Integrate Kernel Root implementation"
         id: integrate-kernelsu-next
         working-directory: ${{ env.KERNEL_NAME }}
