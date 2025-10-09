@@ -14,4 +14,4 @@ CONFIG_DEVFREQ_THERMAL=y
 CONFIG_GENERIC_ADC_THERMAL=y
 EOF
 
-export EXTRA_CONFIG_NAME="${EXTRA_CONFIG_NAME} vendor/sps.config"
+make $args vendor/sps.config
