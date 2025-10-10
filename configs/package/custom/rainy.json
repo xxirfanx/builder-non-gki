@@ -11,17 +11,17 @@
     },
     "output_image": "Image.gz-dtb",
     "use_python2": false,
-    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/sps.sh",
+    "additional_script_link": "https://github.com/kernel-build-from-rainyland/builder-non-gki/raw/main/scripts/rainy.sh",
     "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
-      "kpimg_link": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch/releases/download/0.12.0/kpimg"
+      "kpimg_link": ""
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next",
-      "setupName": "KernelSU-Next",
+      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/SukiSU-Ultra/main/kernel/setup.sh",
+      "setupArg": "susfs-main",
+      "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
     },
