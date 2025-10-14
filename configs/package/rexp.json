@@ -238,8 +238,8 @@
     },
     "toolchains": [
       {
-        "repo": "https://gitlab.com/RainyXeon/clang-r563880.git",
-        "branch": "main",
+        "repo": "https://gitlab.com/RainyXeon/clang-r530567.git",
+        "branch": "14.0",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
