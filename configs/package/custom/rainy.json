@@ -19,7 +19,7 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/Wild_KSU/refs/heads/next/kernel/setup.sh",
+      "setupLink": "https://raw.githubusercontent.com/kernel-build-from-rainyland/Wild_KSU/refs/heads/wild/kernel/setup.sh",
       "setupArg": "wild",
       "setupName": "Wild_KSU",
       "needPatch": false,
