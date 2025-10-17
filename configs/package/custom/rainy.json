@@ -27,7 +27,8 @@
     },
     "toolchains": [
       {
-        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/mirror-goog-main-prebuilts/clang-r574158.tar.gz",
+        "repo": "https://gitlab.com/RainyXeon/clang-r563880",
+        "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
       }
