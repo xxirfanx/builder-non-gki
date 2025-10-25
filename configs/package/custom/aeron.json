@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "ShawnTheSheep-Aeron",
+      "name": "ShaunTheSheep-Aeron",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/kernelsu.config vendor/susfs.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -67,14 +67,14 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "shawn"
+      "branch": "shaun"
     }
   },
   {
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "ShawnTheSheep-Aeron-Suki-Banana",
+      "name": "ShaunTheSheep-Aeron-Suki-Banana",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/kernelsu.config vendor/susfs.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -138,14 +138,14 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "shawn"
+      "branch": "shaun"
     }
   },
   {
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "ShawnTheSheep-Absolute-Aeron",
+      "name": "ShaunTheSheep-Absolute-Aeron",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/lz4kd.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config vendor/kernelpatch.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -209,7 +209,7 @@
       "use": true,
       "release": true,
       "repo": "https://github.com/kernel-build-from-rainyland/AnyKernel3",
-      "branch": "shawn"
+      "branch": "shaun"
     }
   }
 ]
