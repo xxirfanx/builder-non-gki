@@ -4,10 +4,10 @@
       "device": "spacewar",
       "vendor": "nothing",
       "name": "sukisu",
-      "defconfig": "spacewar_defconfig",
+      "defconfig": "lahaina-qgki_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/kernel-build-from-rainyland/Spacewar_NOS3.0_Kernel",
-      "branch": "sm7325/v/mr"
+      "repo": "https://github.com/sqldown/android_kernel_nothing_sm7325",
+      "branch": "lineage-23.0"
     },
     "output_image": "Image",
     "use_python2": false,
