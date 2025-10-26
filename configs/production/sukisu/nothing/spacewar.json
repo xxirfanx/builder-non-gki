@@ -4,7 +4,7 @@
       "device": "spacewar",
       "vendor": "nothing",
       "name": "sukisu",
-      "defconfig": "lahaina-qgki_defconfig",
+      "defconfig": "np_defconfig",
       "extraConfig": "",
       "repo": "https://github.com/sqldown/android_kernel_nothing_sm7325",
       "branch": "lineage-23.0"
