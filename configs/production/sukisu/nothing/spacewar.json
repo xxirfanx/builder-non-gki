@@ -6,8 +6,8 @@
       "name": "sukisu",
       "defconfig": "np_defconfig",
       "extraConfig": "",
-      "repo": "https://github.com/sqldown/android_kernel_nothing_sm7325",
-      "branch": "lineage-23.0"
+      "repo": "https://github.com/sqldown/android_kernel_msm-5.4_nothing_sm7325.git",
+      "branch": "master"
     },
     "output_image": "Image",
     "use_python2": false,
